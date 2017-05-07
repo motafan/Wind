@@ -1,6 +1,0 @@
-framework module Pods_WindTests {
-  umbrella header "Pods-WindTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

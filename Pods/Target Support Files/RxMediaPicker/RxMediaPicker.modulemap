@@ -1,6 +1,0 @@
-framework module RxMediaPicker {
-  umbrella header "RxMediaPicker-umbrella.h"
-
-  export *
-  module * { export * }
-}
