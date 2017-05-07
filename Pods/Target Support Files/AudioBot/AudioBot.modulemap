@@ -1,0 +1,6 @@
+framework module AudioBot {
+  umbrella header "AudioBot-umbrella.h"
+
+  export *
+  module * { export * }
+}

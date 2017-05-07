@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lYD-lV-p5T">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--问股-->
+        <scene sceneID="4HJ-9D-Of7">
+            <objects>
+                <viewController id="CTY-BY-eZ9" customClass="LoginViewController" customModule="Wind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L8x-Wf-RTe"/>
+                        <viewControllerLayoutGuide type="bottom" id="IwG-N2-Z4P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FQi-yQ-8jw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="问股" id="1vk-pG-ibp">
+                        <barButtonItem key="rightBarButtonItem" title="注册" id="ybm-4c-vdR">
+                            <connections>
+                                <segue destination="7GV-SO-fmm" kind="show" identifier="register" id="trV-6B-xPP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NyA-zc-74c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="-68.815592203898049"/>
+        </scene>
+        <!--register-->
+        <scene sceneID="6WR-4i-fGO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Register" referencedIdentifier="register" id="7GV-SO-fmm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y0M-Ol-GW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2231.1999999999998" y="-99.850074962518747"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cS1-iD-FUp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lYD-lV-p5T" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5Va-n2-C7N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.20239311460000001" green="0.75563782450000005" blue="0.96240097280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CTY-BY-eZ9" kind="relationship" relationship="rootViewController" id="S3j-MG-b64"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RVq-82-mTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688.79999999999995" y="-68.815592203898049"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+</document>

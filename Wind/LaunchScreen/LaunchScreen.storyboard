@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zaT-NE-Tpl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Launch Screen View Controller-->
+        <scene sceneID="80m-xB-UNs">
+            <objects>
+                <viewController storyboardIdentifier="LaunchScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zaT-NE-Tpl" customClass="LaunchScreenViewController" customModule="Wind" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d54-uY-ftn"/>
+                        <viewControllerLayoutGuide type="bottom" id="HXR-Re-aTE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kd1-w1-sDL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fbr-fQ-nfU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fbr-fQ-nfU" secondAttribute="trailing" id="FhH-4L-daJ"/>
+                            <constraint firstAttribute="bottom" secondItem="fbr-fQ-nfU" secondAttribute="bottom" id="UJa-mn-ykg"/>
+                            <constraint firstItem="fbr-fQ-nfU" firstAttribute="top" secondItem="Kd1-w1-sDL" secondAttribute="top" id="onf-yU-Qb8"/>
+                            <constraint firstItem="fbr-fQ-nfU" firstAttribute="leading" secondItem="Kd1-w1-sDL" secondAttribute="leading" id="tKk-Gn-Sdv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="launchScreenOutlet" destination="fbr-fQ-nfU" id="HHB-0N-Wad"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J0l-fJ-4hf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="98" y="255"/>
+        </scene>
+    </scenes>
+</document>
