@@ -64,80 +64,29 @@ extension NSObject: ImageOrientationCompatible { }
 //http://blog.csdn.net/hitwhylz/article/details/39518463#comments
 extension ImageOrientation where Base: UIImage {
     
-    func fixOrientation() -> UIImage? {
+    func fixOrientation() -> UIImage {
         
         // No-op if the orientation is already correct
-        if case .up = base.imageOrientation {
-             return base
-        }
-        
-        
         // We need to calculate the proper transformation to make the image upright.
         // We do it in 2 steps: Rotate if Left/Right/Down, and then flip if Mirrored.
-        var transform: CGAffineTransform = .identity
-        
-        switch self.base.imageOrientation {
-        case .down,.downMirrored:
-            transform = transform
-                .translatedBy(x: base.size.width, y: base.size.height)
-                .rotated(by: CGFloat.pi)
-        case .left,.leftMirrored:
-            transform = transform
-                .translatedBy(x: base.size.width, y: 0)
-                .rotated(by:.pi / 2)
-        case .right,.rightMirrored:
-            transform = transform
-                .translatedBy(x: 0, y: base.size.height)
-                .rotated(by: -CGFloat.pi / 2)
-        default:
-            break
-        }
         
         switch base.imageOrientation {
-        case .upMirrored,.downMirrored:
-            transform = transform
-                .translatedBy(x: base.size.width, y: 0)
-                .scaledBy(x: -1, y: 1)
-        case .leftMirrored,.rightMirrored:
-            transform = transform
-                .translatedBy(x: base.size.height, y: 1)
-                .scaledBy(x: -1, y: 1)
-        default:
-            break
+        case .up:
+            return base
+        case .down:
+            return UIImage(cgImage: base.cgImage!, scale: base.scale, orientation: .left)
+        case .left,.right:
+            return UIImage(cgImage: base.cgImage!, scale: base.scale, orientation: .up)
+        case .upMirrored:
+            return UIImage(cgImage: base.cgImage!, scale: base.scale, orientation: .leftMirrored)
+        case .downMirrored:
+            return UIImage(cgImage: base.cgImage!, scale: base.scale, orientation: .rightMirrored)
+        case .leftMirrored:
+            return UIImage(cgImage: base.cgImage!, scale: base.scale, orientation: .downMirrored)
+        case .rightMirrored:
+            return UIImage(cgImage: base.cgImage!, scale: base.scale, orientation: .upMirrored)
         }
         
-        // Now we draw the underlying CGImage into a new context, applying the transform
-        // calculated above.
-        guard let cgImage = base.cgImage else {
-            return nil
-        }
-        
-        let w = Int(base.size.width)
-        let h =  Int(base.size.height)
-        let bitsPerComponent = cgImage.bitsPerComponent
-        let bytesPerRow =  0
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bitmapInfo = cgImage.bitmapInfo
-        
-        guard let context = CGContext(data: nil,
-                                width: w,
-                                height: h,
-                                bitsPerComponent: bitsPerComponent,
-                                bytesPerRow: bytesPerRow,
-                                space: colorSpace,
-                                bitmapInfo: bitmapInfo.rawValue) else
-        {
-                return nil
-        }
-        context.concatenate(transform)
-        switch base.imageOrientation {
-        case .left,.leftMirrored,.right,.rightMirrored:
-            context.draw(base.cgImage!, in: CGRect(x: 0, y: 0, width: base.size.height, height: base.size.width))
-        default:
-            context.draw(base.cgImage!, in: CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height))
-        }
-        
-        return context.makeImage().flatMap{ UIImage(cgImage: $0) }
     }
     
 }

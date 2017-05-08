@@ -197,8 +197,8 @@ class RegisterDefaultAPI: RegisterAPI {
             .debug()
             .map{ (response, value) in
                 guard let result = value as? [String: Any],
-                      let statusState = result[StatusCode.status] as? Int,
-                      statusState == StatusCode.success else {
+                      let statusState = result[Status.code] as? Int,
+                      statusState == Status.success else {
                         return false
                 }
                 return true

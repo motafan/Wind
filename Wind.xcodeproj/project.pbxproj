@@ -14,12 +14,16 @@
 		F32385AE1EC0036600C65708 /* UIImage+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32385AB1EC0036600C65708 /* UIImage+Orientation.swift */; };
 		F32385AF1EC0036600C65708 /* UIStoryboard+Convenient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32385AC1EC0036600C65708 /* UIStoryboard+Convenient.swift */; };
 		F32385B01EC0036600C65708 /* UIView+Convenient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32385AD1EC0036600C65708 /* UIView+Convenient.swift */; };
+		F323870F1EC0419800C65708 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323870E1EC0419800C65708 /* LoginViewController.swift */; };
+		F32387111EC0441000C65708 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32387101EC0441000C65708 /* SigninViewModel.swift */; };
+		F32387131EC045A800C65708 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32387121EC045A800C65708 /* ValidationResult.swift */; };
+		F32387151EC0463000C65708 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32387141EC0463000C65708 /* LoginProtocols.swift */; };
+		F32387171EC054D100C65708 /* LoginDefaultImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32387161EC054D100C65708 /* LoginDefaultImplementation.swift */; };
 		F336063C1EBC4C54007A5DC8 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F336063B1EBC4C54007A5DC8 /* LaunchScreenViewController.swift */; };
 		F33606461EBC5081007A5DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F33606451EBC5081007A5DC8 /* LaunchScreen.storyboard */; };
 		F33B465D1EBACFA100B9BB40 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F33B465C1EBACFA100B9BB40 /* Login.storyboard */; };
 		F33B46721EBAFDD800B9BB40 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33B46711EBAFDD800B9BB40 /* TableViewController.swift */; };
 		F33B46741EBAFDE000B9BB40 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33B46731EBAFDE000B9BB40 /* User.swift */; };
-		F33B46761EBB00B900B9BB40 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33B46751EBB00B900B9BB40 /* LoginViewController.swift */; };
 		F33D9CE31EAF1B650049CA51 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D9CE21EAF1B650049CA51 /* RegisterViewController.swift */; };
 		F33D9CE61EAF1E630049CA51 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D9CE51EAF1E630049CA51 /* SignupViewModel.swift */; };
 		F33D9CE81EAF31700049CA51 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D9CE71EAF31700049CA51 /* RegisterProtocols.swift */; };
@@ -86,12 +90,16 @@
 		F32385AB1EC0036600C65708 /* UIImage+Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Orientation.swift"; sourceTree = "<group>"; };
 		F32385AC1EC0036600C65708 /* UIStoryboard+Convenient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Convenient.swift"; sourceTree = "<group>"; };
 		F32385AD1EC0036600C65708 /* UIView+Convenient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Convenient.swift"; sourceTree = "<group>"; };
+		F323870E1EC0419800C65708 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F32387101EC0441000C65708 /* SigninViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
+		F32387121EC045A800C65708 /* ValidationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
+		F32387141EC0463000C65708 /* LoginProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		F32387161EC054D100C65708 /* LoginDefaultImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDefaultImplementation.swift; sourceTree = "<group>"; };
 		F336063B1EBC4C54007A5DC8 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		F33606451EBC5081007A5DC8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F33B465C1EBACFA100B9BB40 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F33B46711EBAFDD800B9BB40 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F33B46731EBAFDE000B9BB40 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		F33B46751EBB00B900B9BB40 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F33D9CE21EAF1B650049CA51 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F33D9CE51EAF1E630049CA51 /* SignupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		F33D9CE71EAF31700049CA51 /* RegisterProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
@@ -204,6 +212,36 @@
 			path = Convenient;
 			sourceTree = "<group>";
 		};
+		F323870A1EC0411C00C65708 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F32387101EC0441000C65708 /* SigninViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F323870B1EC0413100C65708 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F323870C1EC0415100C65708 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F323870D1EC0416C00C65708 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F323870E1EC0419800C65708 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		F33606381EBC4C07007A5DC8 /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +286,7 @@
 			children = (
 				F33EF2181EB039E500EFF276 /* Wireframe.swift */,
 				F33EF21C1EB041DB00EFF276 /* Environment.swift */,
+				F32387121EC045A800C65708 /* ValidationResult.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -340,8 +379,13 @@
 		F3CAA1EB1EAEE7DE00C6F4AF /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F323870D1EC0416C00C65708 /* Controller */,
+				F323870C1EC0415100C65708 /* View */,
+				F323870B1EC0413100C65708 /* Model */,
+				F323870A1EC0411C00C65708 /* ViewModel */,
 				F33B465C1EBACFA100B9BB40 /* Login.storyboard */,
-				F33B46751EBB00B900B9BB40 /* LoginViewController.swift */,
+				F32387141EC0463000C65708 /* LoginProtocols.swift */,
+				F32387161EC054D100C65708 /* LoginDefaultImplementation.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -671,17 +715,21 @@
 				F33EF2191EB039E500EFF276 /* Wireframe.swift in Sources */,
 				F32385AF1EC0036600C65708 /* UIStoryboard+Convenient.swift in Sources */,
 				F32385B01EC0036600C65708 /* UIView+Convenient.swift in Sources */,
+				F323870F1EC0419800C65708 /* LoginViewController.swift in Sources */,
 				F336063C1EBC4C54007A5DC8 /* LaunchScreenViewController.swift in Sources */,
 				F3BF35041E288198000FB56B /* AppDelegate.swift in Sources */,
 				F33E920D1EB97919003CF6DC /* WriteSequenceToConsole.swift in Sources */,
 				F33B46721EBAFDD800B9BB40 /* TableViewController.swift in Sources */,
 				F38132A31E49B2820043B0D5 /* Reload.swift in Sources */,
+				F32387151EC0463000C65708 /* LoginProtocols.swift in Sources */,
 				F31C01FC1E519A19004B25AA /* MP3Recoder.swift in Sources */,
 				F392F5831EB1BD6800C3DC2C /* R.generated.swift in Sources */,
+				F32387171EC054D100C65708 /* LoginDefaultImplementation.swift in Sources */,
 				F32385AE1EC0036600C65708 /* UIImage+Orientation.swift in Sources */,
+				F32387111EC0441000C65708 /* SigninViewModel.swift in Sources */,
+				F32387131EC045A800C65708 /* ValidationResult.swift in Sources */,
 				F33D9CE61EAF1E630049CA51 /* SignupViewModel.swift in Sources */,
 				F33EF21D1EB041DB00EFF276 /* Environment.swift in Sources */,
-				F33B46761EBB00B900B9BB40 /* LoginViewController.swift in Sources */,
 				F33E92121EB9BEED003CF6DC /* BindingExtensions.swift in Sources */,
 				F3F492351E49A6440022232C /* Request.swift in Sources */,
 				F33D9CEC1EAF37C40049CA51 /* RegisterDefaultImplementation.swift in Sources */,

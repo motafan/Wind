@@ -16,7 +16,7 @@ extension ObservableType {
      Add observer with `id` and print each emitted event.
      - parameter id: an identifier for the subscription.
      */
-    func addObserver(_ id: String) -> Disposable {
+    func debug(_ id: String) -> Disposable {
         return subscribe { debugPrint("Subscription:", id, "Event:", $0) }
     }
     
@@ -25,8 +25,8 @@ extension ObservableType {
 
 extension SharedSequenceConvertibleType where Self.SharingStrategy == RxCocoa.DriverSharingStrategy {
 
-    func addDriver(_ id: String) -> Disposable {
-        return self.asObservable().addObserver(id)
+    func debug(_ id: String) -> Disposable {
+        return self.asObservable().debug(id)
     }
 
 }

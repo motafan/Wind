@@ -10,12 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-enum ValidationResult {
-    case ok(message: String)
-    case empty
-    case validating
-    case failed(message: String)
-}
+
 
 enum SignupState {
     case signedUp(signedUp: Bool)
@@ -27,12 +22,7 @@ enum Result<T, E: Error> {
     case failure(E)
 }
 
-struct StatusCode {
-    
-    static let status = "status"
-    
-    static let success = 0
-}
+
 
 
 
@@ -47,17 +37,4 @@ protocol RegisterValidationService {
     func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> ValidationResult
     func validateCard(_ card: Data) -> ValidationResult
     func validateAgreement(_ agreement: Bool) -> ValidationResult
-}
-
-
-
-extension ValidationResult {
-    var isValid: Bool {
-        switch self {
-        case .ok:
-            return true
-        default:
-            return false
-        }
-    }
 }

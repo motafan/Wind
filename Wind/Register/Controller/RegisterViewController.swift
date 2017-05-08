@@ -89,11 +89,11 @@ class RegisterViewController: UIViewController {
             .disposed(by: rx_disposeBag)
         
         viewModel.validatedCard
-            .addDriver("validatedCard")
+            .debug("validatedCard")
             .disposed(by: rx_disposeBag)
         
         viewModel.validatedAgreement
-            .addDriver("validatedAgreement")
+            .debug("validatedAgreement")
             .disposed(by: rx_disposeBag)
         
         viewModel.signingIn
