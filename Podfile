@@ -26,7 +26,7 @@ def pods
     pod 'AudioBot',         '~> 1.1.1'
     pod 'AutoReview',       '~> 1.0.0'
     pod 'Ruler',            '~> 1.0.1'
-    pod 'RealmSwift',       '~> 2.6.2'
+    pod 'RealmSwift',       '~> 2.7.0'
     pod 'IBAnimatable',     '~> 4.0.0'
     pod 'R.swift',          '~> 3.2.0'
     pod 'Router', :git=> "https://github.com/ilumanxi/Router.git" #,           '~> 1.0.0',

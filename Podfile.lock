@@ -11,11 +11,11 @@ PODS:
   - R.swift (3.2.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
-  - Realm (2.6.2):
-    - Realm/Headers (= 2.6.2)
-  - Realm/Headers (2.6.2)
-  - RealmSwift (2.6.2):
-    - Realm (= 2.6.2)
+  - Realm (2.7.0):
+    - Realm/Headers (= 2.7.0)
+  - Realm/Headers (2.7.0)
+  - RealmSwift (2.7.0):
+    - Realm (= 2.7.0)
   - Router (1.0.0)
   - Ruler (1.0.1)
   - RxAlamofire (3.0.2):
@@ -54,7 +54,7 @@ DEPENDENCIES:
   - mp3lame-for-ios (~> 0.1.1)
   - NSObject+Rx (~> 2.1.0)
   - R.swift (~> 3.2.0)
-  - RealmSwift (~> 2.6.2)
+  - RealmSwift (~> 2.7.0)
   - Router (from `https://github.com/ilumanxi/Router.git`)
   - Ruler (~> 1.0.1)
   - RxAlamofire (~> 3.0.2)
@@ -90,8 +90,8 @@ SPEC CHECKSUMS:
   NSObject+Rx: 09277ba78aa12a8e454c82429eb4e31bfb413131
   R.swift: 207a372a2b5977caef440c696a368009460641d1
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
-  Realm: 29222766425b9f831228f81b63f0e38a97a4d700
-  RealmSwift: d161a80f96cb91ae88391a7d5a9cf08024a7bc8e
+  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
+  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
   Router: 6088d6d321e097070d5ea4bd792cb015dfa0fbb4
   Ruler: 199fa3d7b01f680577ea662e9ea409477ae55181
   RxAlamofire: bc53604b29fd2d220cfaa490c736cc4500819f34
@@ -107,6 +107,6 @@ SPEC CHECKSUMS:
   SwiftTheme: 15ff615b8d2a84d24259611f136e1635c747cc77
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: c7931f82aec2443d42463b912cce4b1fc83e5a9e
+PODFILE CHECKSUM: 4ccbdf650b7f35bae493473d00d6824bb1529e62
 
 COCOAPODS: 1.2.1
