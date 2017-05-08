@@ -11,6 +11,9 @@
 		9279EC2CB5D841774858ED1C /* Pods_WindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FAEBFC7A1EC6036F4BE7784 /* Pods_WindUITests.framework */; };
 		CA9F13190F31FB207BBBE8DC /* Pods_WindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080FEED0ECF15A0C4933451A /* Pods_WindTests.framework */; };
 		F31C01FC1E519A19004B25AA /* MP3Recoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31C01FB1E519A19004B25AA /* MP3Recoder.swift */; };
+		F32385AE1EC0036600C65708 /* UIImage+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32385AB1EC0036600C65708 /* UIImage+Orientation.swift */; };
+		F32385AF1EC0036600C65708 /* UIStoryboard+Convenient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32385AC1EC0036600C65708 /* UIStoryboard+Convenient.swift */; };
+		F32385B01EC0036600C65708 /* UIView+Convenient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32385AD1EC0036600C65708 /* UIView+Convenient.swift */; };
 		F336063C1EBC4C54007A5DC8 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F336063B1EBC4C54007A5DC8 /* LaunchScreenViewController.swift */; };
 		F33606461EBC5081007A5DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F33606451EBC5081007A5DC8 /* LaunchScreen.storyboard */; };
 		F33B465D1EBACFA100B9BB40 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F33B465C1EBACFA100B9BB40 /* Login.storyboard */; };
@@ -25,7 +28,6 @@
 		F33E92121EB9BEED003CF6DC /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E92111EB9BEED003CF6DC /* BindingExtensions.swift */; };
 		F33EF2191EB039E500EFF276 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF2181EB039E500EFF276 /* Wireframe.swift */; };
 		F33EF21D1EB041DB00EFF276 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF21C1EB041DB00EFF276 /* Environment.swift */; };
-		F35B5B811EB1D86E00C0B741 /* UIImage+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35B5B801EB1D86E00C0B741 /* UIImage+Orientation.swift */; };
 		F38132A31E49B2820043B0D5 /* Reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38132A21E49B2820043B0D5 /* Reload.swift */; };
 		F392F5831EB1BD6800C3DC2C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F392F5821EB1BD6800C3DC2C /* R.generated.swift */; };
 		F3BF35041E288198000FB56B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF35031E288198000FB56B /* AppDelegate.swift */; };
@@ -35,8 +37,6 @@
 		F3BF35261E288199000FB56B /* WindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF35251E288199000FB56B /* WindUITests.swift */; };
 		F3CAA1EE1EAEE91B00C6F4AF /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3CAA1ED1EAEE91B00C6F4AF /* Register.storyboard */; };
 		F3CAA1F01EAEEC4A00C6F4AF /* Register.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3CAA1EF1EAEEC4A00C6F4AF /* Register.xcassets */; };
-		F3CB24721E2F0B0C00823B48 /* UIStoryboard+Convenient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CB24701E2F0B0C00823B48 /* UIStoryboard+Convenient.swift */; };
-		F3CB24731E2F0B0C00823B48 /* UIView+Convenient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CB24711E2F0B0C00823B48 /* UIView+Convenient.swift */; };
 		F3F492351E49A6440022232C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F492341E49A6440022232C /* Request.swift */; };
 		F3F492391E49A6D90022232C /* URLSessionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F492381E49A6D90022232C /* URLSessionClient.swift */; };
 		F3F4923B1E49A75F0022232C /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4923A1E49A75F0022232C /* UserRequest.swift */; };
@@ -83,6 +83,9 @@
 		9FAEBFC7A1EC6036F4BE7784 /* Pods_WindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1808F6CBCBCD0A5716059FB /* Pods-WindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WindTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WindTests/Pods-WindTests.release.xcconfig"; sourceTree = "<group>"; };
 		F31C01FB1E519A19004B25AA /* MP3Recoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MP3Recoder.swift; sourceTree = "<group>"; };
+		F32385AB1EC0036600C65708 /* UIImage+Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Orientation.swift"; sourceTree = "<group>"; };
+		F32385AC1EC0036600C65708 /* UIStoryboard+Convenient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Convenient.swift"; sourceTree = "<group>"; };
+		F32385AD1EC0036600C65708 /* UIView+Convenient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Convenient.swift"; sourceTree = "<group>"; };
 		F336063B1EBC4C54007A5DC8 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		F33606451EBC5081007A5DC8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F33B465C1EBACFA100B9BB40 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -97,7 +100,6 @@
 		F33E92111EB9BEED003CF6DC /* BindingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
 		F33EF2181EB039E500EFF276 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		F33EF21C1EB041DB00EFF276 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		F35B5B801EB1D86E00C0B741 /* UIImage+Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Orientation.swift"; sourceTree = "<group>"; };
 		F38132A21E49B2820043B0D5 /* Reload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reload.swift; sourceTree = "<group>"; };
 		F392F5821EB1BD6800C3DC2C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		F3BF35001E288198000FB56B /* Wind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,8 +125,6 @@
 		F3BF353C1E289653000FB56B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/Wind-fybyxhsunlsrzeawvxgqaspkqewe/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		F3CAA1ED1EAEE91B00C6F4AF /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		F3CAA1EF1EAEEC4A00C6F4AF /* Register.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Register.xcassets; sourceTree = "<group>"; };
-		F3CB24701E2F0B0C00823B48 /* UIStoryboard+Convenient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Convenient.swift"; sourceTree = "<group>"; };
-		F3CB24711E2F0B0C00823B48 /* UIView+Convenient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Convenient.swift"; sourceTree = "<group>"; };
 		F3E63AAB1E4C744400B2AB1F /* Wind-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wind-Bridging-Header.h"; sourceTree = "<group>"; };
 		F3F492341E49A6440022232C /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		F3F492381E49A6D90022232C /* URLSessionClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionClient.swift; sourceTree = "<group>"; };
@@ -192,6 +192,16 @@
 				9FAEBFC7A1EC6036F4BE7784 /* Pods_WindUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F32385AA1EC0036600C65708 /* Convenient */ = {
+			isa = PBXGroup;
+			children = (
+				F32385AB1EC0036600C65708 /* UIImage+Orientation.swift */,
+				F32385AC1EC0036600C65708 /* UIStoryboard+Convenient.swift */,
+				F32385AD1EC0036600C65708 /* UIView+Convenient.swift */,
+			);
+			path = Convenient;
 			sourceTree = "<group>";
 		};
 		F33606381EBC4C07007A5DC8 /* LaunchScreen */ = {
@@ -290,14 +300,14 @@
 		F3BF35021E288198000FB56B /* Wind */ = {
 			isa = PBXGroup;
 			children = (
+				F362BF861E2F4C3E00C3C6D7 /* Request */,
+				F3E63AA11E4C3F6100B2AB1F /* Audio */,
+				F33EF2171EB039BA00EFF276 /* Services */,
+				F32385AA1EC0036600C65708 /* Convenient */,
 				F33606381EBC4C07007A5DC8 /* LaunchScreen */,
 				F33EF2251EB093BC00EFF276 /* Extensions */,
-				F33EF2171EB039BA00EFF276 /* Services */,
 				F3CAA1EC1EAEE8FB00C6F4AF /* Register */,
 				F3CAA1EB1EAEE7DE00C6F4AF /* Login */,
-				F3E63AA11E4C3F6100B2AB1F /* Audio */,
-				F362BF861E2F4C3E00C3C6D7 /* Request */,
-				F3CB246F1E2F086A00823B48 /* Convenient */,
 				F3BF35031E288198000FB56B /* AppDelegate.swift */,
 				F392F5821EB1BD6800C3DC2C /* R.generated.swift */,
 				F3BF35091E288198000FB56B /* Main.storyboard */,
@@ -348,17 +358,6 @@
 				F33D9CEB1EAF37C40049CA51 /* RegisterDefaultImplementation.swift */,
 			);
 			path = Register;
-			sourceTree = "<group>";
-		};
-		F3CB246F1E2F086A00823B48 /* Convenient */ = {
-			isa = PBXGroup;
-			children = (
-				F3CB24701E2F0B0C00823B48 /* UIStoryboard+Convenient.swift */,
-				F3CB24711E2F0B0C00823B48 /* UIView+Convenient.swift */,
-				F35B5B801EB1D86E00C0B741 /* UIImage+Orientation.swift */,
-			);
-			name = Convenient;
-			path = ../Convenient;
 			sourceTree = "<group>";
 		};
 		F3E63AA11E4C3F6100B2AB1F /* Audio */ = {
@@ -670,6 +669,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F33EF2191EB039E500EFF276 /* Wireframe.swift in Sources */,
+				F32385AF1EC0036600C65708 /* UIStoryboard+Convenient.swift in Sources */,
+				F32385B01EC0036600C65708 /* UIView+Convenient.swift in Sources */,
 				F336063C1EBC4C54007A5DC8 /* LaunchScreenViewController.swift in Sources */,
 				F3BF35041E288198000FB56B /* AppDelegate.swift in Sources */,
 				F33E920D1EB97919003CF6DC /* WriteSequenceToConsole.swift in Sources */,
@@ -677,14 +678,12 @@
 				F38132A31E49B2820043B0D5 /* Reload.swift in Sources */,
 				F31C01FC1E519A19004B25AA /* MP3Recoder.swift in Sources */,
 				F392F5831EB1BD6800C3DC2C /* R.generated.swift in Sources */,
+				F32385AE1EC0036600C65708 /* UIImage+Orientation.swift in Sources */,
 				F33D9CE61EAF1E630049CA51 /* SignupViewModel.swift in Sources */,
-				F35B5B811EB1D86E00C0B741 /* UIImage+Orientation.swift in Sources */,
 				F33EF21D1EB041DB00EFF276 /* Environment.swift in Sources */,
 				F33B46761EBB00B900B9BB40 /* LoginViewController.swift in Sources */,
-				F3CB24731E2F0B0C00823B48 /* UIView+Convenient.swift in Sources */,
 				F33E92121EB9BEED003CF6DC /* BindingExtensions.swift in Sources */,
 				F3F492351E49A6440022232C /* Request.swift in Sources */,
-				F3CB24721E2F0B0C00823B48 /* UIStoryboard+Convenient.swift in Sources */,
 				F33D9CEC1EAF37C40049CA51 /* RegisterDefaultImplementation.swift in Sources */,
 				F33D9CE31EAF1B650049CA51 /* RegisterViewController.swift in Sources */,
 				F3F4923D1E49A9050022232C /* Pagination.swift in Sources */,

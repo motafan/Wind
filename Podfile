@@ -29,7 +29,7 @@ def pods
     pod 'RealmSwift',       '~> 2.7.0'
     pod 'IBAnimatable',     '~> 4.0.0'
     pod 'R.swift',          '~> 3.2.0'
-    pod 'Router', :git=> "https://github.com/ilumanxi/Router.git" #,           '~> 1.0.0',
+    pod 'Router',           :git=> "https://github.com/ilumanxi/Router.git" #,           '~> 1.0.0',
     pod 'SwiftDate',        '~> 4.1.1'
     pod 'mp3lame-for-ios',  '~> 0.1.1'
 end

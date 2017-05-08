@@ -83,11 +83,11 @@ SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AudioBot: b7bcf3b18dc2cdccba14d798400c708908ad203d
   AutoReview: 6dd11897fe97eda0dca3a6aafc13eeeca453620a
-  DeviceGuru: 093cb20ca6b074c9e33df2e2791c521ed67264a5
+  DeviceGuru: '093cb20ca6b074c9e33df2e2791c521ed67264a5'
   IBAnimatable: 63997e8a6cdb233249a3b57cfff2feb535fb01ff
   Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
   mp3lame-for-ios: 4daeb5686885be66438154050e3fe975d4ee1f07
-  NSObject+Rx: 09277ba78aa12a8e454c82429eb4e31bfb413131
+  NSObject+Rx: '09277ba78aa12a8e454c82429eb4e31bfb413131'
   R.swift: 207a372a2b5977caef440c696a368009460641d1
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
