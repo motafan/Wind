@@ -33,14 +33,16 @@ class LoginViewController: UIViewController {
 
         
         let viewModel = SigninViewModel(
-            input: (phoneOutlet.rx.text.orEmpty.asDriver(),
-                    password: passwordOutlet.rx.text.orEmpty.asDriver(),
-                    automaticLogin: automaticLoginSubject.asDriver(),
-                    signinTaps: signinOutlet.rx.tap.asDriver()
+            input: (
+                phone: phoneOutlet.rx.text.orEmpty.asDriver(),
+                password: passwordOutlet.rx.text.orEmpty.asDriver(),
+                automaticLogin: automaticLoginSubject.asDriver(),
+                signinTaps: signinOutlet.rx.tap.asDriver()
             ),
-            dependency: (API: LoginDefaultAPI.shared,
-                         validationService: LoginDefaultValidationService.shared,
-                         wireframe: DefaultWireframe.shared
+            dependency: (
+                API: LoginDefaultAPI.shared,
+                validationService: LoginDefaultValidationService.shared,
+                wireframe: DefaultWireframe.shared
             )
         )
         

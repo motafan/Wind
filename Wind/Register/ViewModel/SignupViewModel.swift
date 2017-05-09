@@ -78,16 +78,15 @@ class SignupViewModel {
         self.signedIn = input.signupTaps.withLatestFrom(inputInfo)
             .flatMapLatest{ (phone, username, password, card) in
                 return API.signup(phone, username: username, password: password, card: card)
-                    .timeout(30, scheduler: MainScheduler.instance)
                     .trackActivity(signingIn)
-                    .asDriver(onErrorJustReturn: false)
+                    .asDriver(onErrorJustReturn: .failed(message: "Register failed"))
             }
             .flatMapLatest { signingIn -> Driver<Bool> in
-                let message = signingIn ? "Mock: Signed in to Wind." : "Mock: Sign in to Wind failed"
+                let message = signingIn.description
                 return wireframe.promptFor(message, cancelAction: "OK", actions: [])
                     // propagate original value
                     .map { _ in
-                        signingIn
+                        signingIn.isValid
                     }
                     .asDriver(onErrorJustReturn: false)
             }

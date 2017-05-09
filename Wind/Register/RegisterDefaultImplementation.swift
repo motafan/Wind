@@ -185,7 +185,7 @@ class RegisterDefaultAPI: RegisterAPI {
     
     static let shared  = RegisterDefaultAPI()
     
-    func signup(_ phone: String, username: String, password: String, card: Data) -> Observable<Bool> {
+    func signup(_ phone: String, username: String, password: String, card: Data) -> Observable<ValidationResult> {
         let url = "http://mqaa.emoney.cn/mobile/Identity/Register"
         let parameters = ["Username":phone,
                           "NikeName": username,
@@ -196,12 +196,19 @@ class RegisterDefaultAPI: RegisterAPI {
             .requestJSON(.post, url, parameters: parameters)
             .debug()
             .map{ (response, value) in
-                guard let result = value as? [String: Any],
-                      let statusState = result[Status.code] as? Int,
-                      statusState == Status.success else {
-                        return false
+                guard let result = value as? [String: Any] else {
+                    return .failed(message: "Login failed")
                 }
-                return true
+                
+                guard let code = result[Status.code] as? Int,
+                    let message =  result[Status.message] as? String else {
+                        return .failed(message: "Login failed")
+                }
+                
+                if code != Status.success {
+                    return .failed(message: message)
+                }
+                return .ok(message: message)
             }
     }
     

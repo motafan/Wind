@@ -27,7 +27,7 @@ enum Result<T, E: Error> {
 
 
 protocol RegisterAPI {
-    func signup(_ phone: String, username: String, password: String, card: Data) -> Observable<Bool>
+    func signup(_ phone: String, username: String, password: String, card: Data) -> Observable<ValidationResult>
 }
 
 protocol RegisterValidationService {

@@ -28,13 +28,15 @@ class LoginDefaultAPI: LoginAPI {
                     return .failed(message: "Login failed")
                 }
                 
-                let code = result[Status.code] as! Int
-                let message = result[Status.message] as! String
+                guard let code = result[Status.code] as? Int,
+                    let message =  result[Status.message] as? String else {
+                    return .failed(message: "Login failed")
+                }
                 
                 if code != Status.success {
                     return .failed(message: message)
                 }
-                return ValidationResult.ok(message: message)
+                return .ok(message: message)
         }
     }
 }

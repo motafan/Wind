@@ -131,6 +131,10 @@ class RegisterViewController: UIViewController {
                     .flatMapLatest { title  -> Observable<(UIImage, UIImage?)> in
                         return self.selectImageForTitle(title)
                     }
+                    .observeOn(ConcurrentDispatchQueueScheduler(qos: .userInteractive))
+                    .map{ (originImage,editImage) -> (UIImage, UIImage?) in
+                        return (originImage.io.compress(),editImage?.io.compress())
+                    }
                     .asDriver(onErrorJustReturn: (UIImage(),nil))
             }
            .map{ (originImage,editImage) -> (UIImage, Data) in
