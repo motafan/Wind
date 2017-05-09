@@ -34,6 +34,10 @@
 		F33EF21D1EB041DB00EFF276 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF21C1EB041DB00EFF276 /* Environment.swift */; };
 		F38132A31E49B2820043B0D5 /* Reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38132A21E49B2820043B0D5 /* Reload.swift */; };
 		F392F5831EB1BD6800C3DC2C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F392F5821EB1BD6800C3DC2C /* R.generated.swift */; };
+		F3A139301EC19F2100B2ED5A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A1392F1EC19F2100B2ED5A /* ResetPasswordViewController.swift */; };
+		F3A139321EC1A2B100B2ED5A /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A139311EC1A2B100B2ED5A /* ResetPasswordViewModel.swift */; };
+		F3A139341EC1A70100B2ED5A /* ResetPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A139331EC1A70100B2ED5A /* ResetPasswordProtocols.swift */; };
+		F3A139361EC1BD2F00B2ED5A /* ResetPasswordDefaultImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A139351EC1BD2F00B2ED5A /* ResetPasswordDefaultImplementation.swift */; };
 		F3BF35041E288198000FB56B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF35031E288198000FB56B /* AppDelegate.swift */; };
 		F3BF350B1E288198000FB56B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3BF35091E288198000FB56B /* Main.storyboard */; };
 		F3BF350D1E288199000FB56B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BF350C1E288199000FB56B /* Assets.xcassets */; };
@@ -110,6 +114,10 @@
 		F33EF21C1EB041DB00EFF276 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		F38132A21E49B2820043B0D5 /* Reload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reload.swift; sourceTree = "<group>"; };
 		F392F5821EB1BD6800C3DC2C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		F3A1392F1EC19F2100B2ED5A /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		F3A139311EC1A2B100B2ED5A /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		F3A139331EC1A70100B2ED5A /* ResetPasswordProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordProtocols.swift; sourceTree = "<group>"; };
+		F3A139351EC1BD2F00B2ED5A /* ResetPasswordDefaultImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordDefaultImplementation.swift; sourceTree = "<group>"; };
 		F3BF35001E288198000FB56B /* Wind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BF35031E288198000FB56B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3BF350A1E288198000FB56B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -216,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				F32387101EC0441000C65708 /* SigninViewModel.swift */,
+				F3A139311EC1A2B100B2ED5A /* ResetPasswordViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				F323870E1EC0419800C65708 /* LoginViewController.swift */,
+				F3A1392F1EC19F2100B2ED5A /* ResetPasswordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -385,7 +395,9 @@
 				F323870A1EC0411C00C65708 /* ViewModel */,
 				F33B465C1EBACFA100B9BB40 /* Login.storyboard */,
 				F32387141EC0463000C65708 /* LoginProtocols.swift */,
+				F3A139331EC1A70100B2ED5A /* ResetPasswordProtocols.swift */,
 				F32387161EC054D100C65708 /* LoginDefaultImplementation.swift */,
+				F3A139351EC1BD2F00B2ED5A /* ResetPasswordDefaultImplementation.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -720,15 +732,18 @@
 				F3BF35041E288198000FB56B /* AppDelegate.swift in Sources */,
 				F33E920D1EB97919003CF6DC /* WriteSequenceToConsole.swift in Sources */,
 				F33B46721EBAFDD800B9BB40 /* TableViewController.swift in Sources */,
+				F3A139341EC1A70100B2ED5A /* ResetPasswordProtocols.swift in Sources */,
 				F38132A31E49B2820043B0D5 /* Reload.swift in Sources */,
 				F32387151EC0463000C65708 /* LoginProtocols.swift in Sources */,
 				F31C01FC1E519A19004B25AA /* MP3Recoder.swift in Sources */,
+				F3A139321EC1A2B100B2ED5A /* ResetPasswordViewModel.swift in Sources */,
 				F392F5831EB1BD6800C3DC2C /* R.generated.swift in Sources */,
 				F32387171EC054D100C65708 /* LoginDefaultImplementation.swift in Sources */,
 				F32385AE1EC0036600C65708 /* UIImage+Orientation.swift in Sources */,
 				F32387111EC0441000C65708 /* SigninViewModel.swift in Sources */,
 				F32387131EC045A800C65708 /* ValidationResult.swift in Sources */,
 				F33D9CE61EAF1E630049CA51 /* SignupViewModel.swift in Sources */,
+				F3A139361EC1BD2F00B2ED5A /* ResetPasswordDefaultImplementation.swift in Sources */,
 				F33EF21D1EB041DB00EFF276 /* Environment.swift in Sources */,
 				F33E92121EB9BEED003CF6DC /* BindingExtensions.swift in Sources */,
 				F3F492351E49A6440022232C /* Request.swift in Sources */,
@@ -739,6 +754,7 @@
 				F3F492391E49A6D90022232C /* URLSessionClient.swift in Sources */,
 				F3F4923B1E49A75F0022232C /* UserRequest.swift in Sources */,
 				F33B46741EBAFDE000B9BB40 /* User.swift in Sources */,
+				F3A139301EC19F2100B2ED5A /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,7 @@ import RxAlamofire
 
 
 
-struct RegisterValidation {
+class Validation {
     
     static let maxUsernameCount = 20
     static let minPasswordCount = 6
@@ -41,7 +41,7 @@ struct RegisterValidation {
      * 联通号段: 130,131,132,155,156,185,186,145,176,1709
      * 电信号段: 133,153,180,181,189,177,1700
      */
-    static func isPhone(_ string: String) -> Bool {
+    class func isPhone(_ string: String) -> Bool {
         let mobile = NSPredicate(format: "SELF MATCHES %@", Mobile)
         let chinaMobile = NSPredicate(format: "SELF MATCHES %@", ChinaMobile)
         let chinaUnicom = NSPredicate(format: "SELF MATCHES %@", ChinaUnicom)
@@ -53,37 +53,88 @@ struct RegisterValidation {
             .contains(true)
     }
     
-    static func isChinaMobile(_ string: String) -> Bool {
+    class func isChinaMobile(_ string: String) -> Bool {
         let a = NSPredicate(format: "SELF MATCHES %@", ChinaMobile)
         return a.evaluate(with: string)
     }
     
-    static func isChinaUnicom(_ string: String) -> Bool {
+    class func isChinaUnicom(_ string: String) -> Bool {
         let a = NSPredicate(format: "SELF MATCHES %@", ChinaUnicom)
         return a.evaluate(with: string)
     }
     
-    static func isChinaTelecom(_ string: String) -> Bool {
+    class func isChinaTelecom(_ string: String) -> Bool {
         let a = NSPredicate(format: "SELF MATCHES %@", ChinaTelecom)
         return a.evaluate(with: string)
     }
     
-    static func isPHS(_ string: String) -> Bool {
+    class func isPHS(_ string: String) -> Bool {
         let a = NSPredicate(format: "SELF MATCHES %@", PHS)
         return a.evaluate(with: string)
     }
     
-    static func isPassword(_ string: String) -> Bool {
+    class func isPassword(_ string: String) -> Bool {
         let a = NSPredicate(format: "SELF MATCHES %@", Passwrod)
         return a.evaluate(with: string)
     }
 }
 
 
+class ValidationManager {
+    
+    
+    class func validatePhone(_ phone: String) -> ValidationResult {
+        
+        if phone.isEmpty {
+            return .empty
+        }
+        
+        if phone.length != 11 {
+            return .failed(message: "Phone must be equls 11 characters")
+        }
+        
+        if !phone.isPhone {
+            return .failed(message: "Phone failed")
+        }
+        return .ok(message: "Phone acceptable")
+    }
+    
+    class func validatePassword(_ password: String) -> ValidationResult {
+        let numberOfCharacters = password.characters.count
+        if numberOfCharacters == 0 {
+            return .empty
+        }
+        
+        if numberOfCharacters < Validation.minPasswordCount || numberOfCharacters > Validation.maxPasswordCount {
+            return .failed(message: "Password must be at range [\(Validation.minPasswordCount)-\(Validation.maxPasswordCount)]characters")
+        }
+        
+        
+        if !Validation.isPassword(password) {
+            return .failed(message: "Password must contain letters and numbers")
+        }
+        return .ok(message: "Password acceptable")
+    }
+    
+    class func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> ValidationResult {
+        if repeatedPassword.isEmpty {
+            return .empty
+        }
+        
+        if repeatedPassword == password {
+            return .ok(message: "Password repeated")
+        }
+        else {
+            return .failed(message: "Password different")
+        }
+    }
+    
+}
+
 extension String {
     
     public var isPhone: Bool {
-        return RegisterValidation.isPhone(self)
+        return Validation.isPhone(self)
     }
     
     public var length: Int {
@@ -98,19 +149,7 @@ class RegisterDefaultValidationService: RegisterValidationService {
     static let shared  = RegisterDefaultValidationService()
 
     func validatePhone(_ phone: String) -> ValidationResult {
-        
-        if phone.isEmpty {
-            return .empty
-        }
-        
-        if phone.length != 11 {
-            return .failed(message: "Phone must be equls 11 characters")
-        }
-        
-        if !phone.isPhone {
-           return .failed(message: "Phone failed")
-        }
-         return .ok(message: "Phone acceptable")
+       return ValidationManager.validatePhone(phone)
     }
     
 
@@ -121,8 +160,8 @@ class RegisterDefaultValidationService: RegisterValidationService {
             return .empty
         }
         
-        if NSString(string: username).length > RegisterValidation.maxUsernameCount {
-            return .failed(message: "Username must be at least \( RegisterValidation.maxUsernameCount) characters")
+        if username.length > Validation.maxUsernameCount {
+            return .failed(message: "Username must be at least \(Validation.maxUsernameCount) characters")
         }
         
         if username.rangeOfCharacter(from: CharacterSet.alphanumerics.inverted) != nil {
@@ -133,33 +172,12 @@ class RegisterDefaultValidationService: RegisterValidationService {
     
     
     func validatePassword(_ password: String) -> ValidationResult {
-        let numberOfCharacters = password.characters.count
-        if numberOfCharacters == 0 {
-            return .empty
-        }
-    
-        if numberOfCharacters < RegisterValidation.minPasswordCount || numberOfCharacters > RegisterValidation.maxPasswordCount {
-            return .failed(message: "Password must be at range [\(RegisterValidation.minPasswordCount)-\(RegisterValidation.maxPasswordCount)]characters")
-        }
         
-        
-        if !RegisterValidation.isPassword(password) {
-            return .failed(message: "Password must contain letters and numbers")
-        }
-        return .ok(message: "Password acceptable")
+        return ValidationManager.validatePassword(password)
     }
     
     func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> ValidationResult {
-        if repeatedPassword.isEmpty {
-            return .empty
-        }
-        
-        if repeatedPassword == password {
-            return .ok(message: "Password repeated")
-        }
-        else {
-            return .failed(message: "Password different")
-        }
+        return ValidationManager.validateRepeatedPassword(password,repeatedPassword: repeatedPassword)
     }
 
     func validateCard(_ card: Data) -> ValidationResult {
@@ -196,19 +214,7 @@ class RegisterDefaultAPI: RegisterAPI {
             .requestJSON(.post, url, parameters: parameters)
             .debug()
             .map{ (response, value) in
-                guard let result = value as? [String: Any] else {
-                    return .failed(message: "Login failed")
-                }
-                
-                guard let code = result[Status.code] as? Int,
-                    let message =  result[Status.message] as? String else {
-                        return .failed(message: "Login failed")
-                }
-                
-                if code != Status.success {
-                    return .failed(message: message)
-                }
-                return .ok(message: message)
+               return ValidationResult.analysis(response, value: value, generalErrorMessage: "Register failed")
             }
     }
     

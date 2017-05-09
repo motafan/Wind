@@ -19,16 +19,17 @@ class SigninViewModel {
     let signedIn: Driver<Bool>
     let signingIn: Driver<Bool>
     
-    init(input:(
-        phone: Driver<String>,
-        password: Driver<String>,
-        automaticLogin: Driver<Bool>,
-        signinTaps: Driver<Void>
+    init(
+        input:(
+            phone: Driver<String>,
+            password: Driver<String>,
+            automaticLogin: Driver<Bool>,
+            signinTaps: Driver<Void>
         ),
-         dependency: (
-        API: LoginAPI,
-        validationService: LoginValidationService,
-        wireframe: Wireframe
+        dependency: (
+            API: LoginAPI,
+            validationService: LoginValidationService,
+            wireframe: Wireframe
         )
     ) {
         

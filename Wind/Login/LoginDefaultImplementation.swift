@@ -23,21 +23,8 @@ class LoginDefaultAPI: LoginAPI {
         return RxAlamofire.requestJSON(.post, url, parameters: parameters)
             .debug()
             .map{ (response, value) in
-                
-                guard let result = value as? [String: Any] else {
-                    return .failed(message: "Login failed")
-                }
-                
-                guard let code = result[Status.code] as? Int,
-                    let message =  result[Status.message] as? String else {
-                    return .failed(message: "Login failed")
-                }
-                
-                if code != Status.success {
-                    return .failed(message: message)
-                }
-                return .ok(message: message)
-        }
+                return ValidationResult.analysis(response, value: value, generalErrorMessage: "Login failed")
+            }
     }
 }
 

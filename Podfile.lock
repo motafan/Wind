@@ -41,6 +41,7 @@ PODS:
     - RxSwift (~> 3.0)
   - SnapKit (3.2.0)
   - SwiftDate (4.1.1)
+  - SwifterSwift (1.6.4)
   - SwiftTheme (0.3.2)
   - SwiftyJSON (3.1.4)
 
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - RxSwiftUtilities (~> 1.0.1)
   - SnapKit (~> 3.2.0)
   - SwiftDate (~> 4.1.1)
+  - SwifterSwift (~> 1.6.4)
   - SwiftTheme (~> 0.3.2)
   - SwiftyJSON (~> 3.1.4)
 
@@ -104,9 +106,10 @@ SPEC CHECKSUMS:
   RxSwiftUtilities: 57e77c17b885931c37aa038f114f14fd1f478ac2
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftDate: ae615078806a322183e5f64e02e80ca8d939bf48
+  SwifterSwift: 92c73c47c3cbf7d5f788adf6459bf07b5d23d3fb
   SwiftTheme: 15ff615b8d2a84d24259611f136e1635c747cc77
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 4ccbdf650b7f35bae493473d00d6824bb1529e62
+PODFILE CHECKSUM: a03e03816d66f934da9e04dc1cb3562641ad9fb7
 
 COCOAPODS: 1.2.1

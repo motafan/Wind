@@ -79,6 +79,14 @@ class LoginViewController: UIViewController {
             .drive(signinOutlet.rx.isEnabled)
             .disposed(by: rx_disposeBag)
         
+        let tapBackground = UITapGestureRecognizer()
+        tapBackground.rx.event
+            .subscribe(onNext: { [weak self] _ in
+                self?.view.endEditing(true)
+            })
+            .disposed(by: rx_disposeBag)
+        view.addGestureRecognizer(tapBackground)
+        
     }
     
 

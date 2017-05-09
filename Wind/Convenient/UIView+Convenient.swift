@@ -37,39 +37,39 @@ import UIKit
 //}
 
 
-
-@IBDesignable public extension UIView {
-    
-    @IBInspectable public var borderColor: UIColor? {
-        get {
-            guard let cgColor = layer.borderColor else {
-                return nil
-            }
-            return UIColor(cgColor: cgColor)
-        }
-        set {
-            layer.borderColor = newValue?.cgColor
-        }
-    }
-    
-    @IBInspectable public var borderWidth: CGFloat {
-        get {  return layer.borderWidth }
-        set {  layer.borderWidth = newValue }
-    }
-    
-    @IBInspectable public var cornerRadius: CGFloat {
-        get {  return layer.cornerRadius }
-        set {
-                layer.cornerRadius = newValue
-                masksToBounds = newValue > 0
-            }
-    }
-    
-    @IBInspectable public var masksToBounds: Bool {
-        get {  return layer.masksToBounds }
-        set {  layer.masksToBounds = newValue }
-    }
-}
+//
+//@IBDesignable public extension UIView {
+//    
+//    @IBInspectable public var borderColor: UIColor? {
+//        get {
+//            guard let cgColor = layer.borderColor else {
+//                return nil
+//            }
+//            return UIColor(cgColor: cgColor)
+//        }
+//        set {
+//            layer.borderColor = newValue?.cgColor
+//        }
+//    }
+//    
+//    @IBInspectable public var borderWidth: CGFloat {
+//        get {  return layer.borderWidth }
+//        set {  layer.borderWidth = newValue }
+//    }
+//    
+//    @IBInspectable public var cornerRadius: CGFloat {
+//        get {  return layer.cornerRadius }
+//        set {
+//                layer.cornerRadius = newValue
+//                masksToBounds = newValue > 0
+//            }
+//    }
+//    
+//    @IBInspectable public var masksToBounds: Bool {
+//        get {  return layer.masksToBounds }
+//        set {  layer.masksToBounds = newValue }
+//    }
+//}
 
 
 public protocol NibCreatable {

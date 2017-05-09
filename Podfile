@@ -18,6 +18,7 @@ def pods
     pod 'RxOptional',       '~> 3.1.3'
     pod 'NSObject+Rx',      '~> 2.1.0'
     pod 'SwiftTheme',       '~> 0.3.2'
+    pod 'SwifterSwift',     '~> 1.6.4'
     pod 'Kingfisher',       '~> 3.6.2'
     pod 'SwiftyJSON',       '~> 3.1.4'
     pod 'Alamofire',        '~> 4.4.0'

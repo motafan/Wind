@@ -31,7 +31,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 7 images.
+  /// This `R.image` struct is generated, and contains static references to 8 images.
   struct image {
     /// Image `LaunchImage`.
     static let launchImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "LaunchImage")
@@ -47,6 +47,8 @@ struct R: Rswift.Validatable {
     static let registerPhone = Rswift.ImageResource(bundle: R.hostingBundle, name: "register-phone")
     /// Image `register-photo`.
     static let registerPhoto = Rswift.ImageResource(bundle: R.hostingBundle, name: "register-photo")
+    /// Image `register-verification`.
+    static let registerVerification = Rswift.ImageResource(bundle: R.hostingBundle, name: "register-verification")
     
     /// `UIImage(named: "LaunchImage", bundle: ..., traitCollection: ...)`
     static func launchImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -81,6 +83,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "register-photo", bundle: ..., traitCollection: ...)`
     static func registerPhoto(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.registerPhoto, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "register-verification", bundle: ..., traitCollection: ...)`
+    static func registerVerification(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.registerVerification, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
@@ -180,6 +187,7 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try launchScreen.validate()
+      try login.validate()
       try main.validate()
       try register.validate()
     }
@@ -202,11 +210,25 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct login: Rswift.StoryboardResourceWithInitialControllerType {
+    struct login: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
       let name = "Login"
+      let register = StoryboardViewControllerResource<LoginViewController>(identifier: "register")
+      
+      func register(_: Void = ()) -> LoginViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: register)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "register-password") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'register-password' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "register-phone") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'register-phone' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "register-checkbox-normal") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'register-checkbox-normal' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "register-checkbox-selected") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'register-checkbox-selected' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "register-verification") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'register-verification' is used in storyboard 'Login', but couldn't be loaded.") }
+        if _R.storyboard.login().register() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'register' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
+      }
       
       fileprivate init() {}
     }
