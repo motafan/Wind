@@ -22,7 +22,7 @@ class LoginDefaultAPI: LoginAPI {
         
         return RxAlamofire.requestJSON(.post, url, parameters: parameters)
             .debug()
-            .map{ (response, value) in
+            .map { (response, value) in
                 return ValidationResult.parse(response, value: value, generalErrorMessage: loginErrorMessage)
             }
     }
