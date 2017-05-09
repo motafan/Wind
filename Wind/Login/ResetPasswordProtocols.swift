@@ -9,6 +9,9 @@
 import RxSwift
 
 
+let resetPasswordErrorMessage = "Reset password failed"
+let sendVerificationCodeErrorMessage = "Send code failed"
+
 protocol ResetPasswordAPI {
     func sendVerificationCode(_ phone: String) -> Observable<ValidationResult>
     func reset(_ phone: String, code: String, password: String) -> Observable<ValidationResult>

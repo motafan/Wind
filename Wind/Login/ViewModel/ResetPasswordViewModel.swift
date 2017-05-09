@@ -46,28 +46,31 @@ class ResetPasswordViewModel {
         let validationService = dependency.validationService
         let wireframe = dependency.wireframe
         
-        validatedPhone = input.phone.map{ phone in
-            return validationService.validatePhone(phone)
-        }
+        validatedPhone = input.phone
+            .map { phone -> ValidationResult in
+                return validationService.validatePhone(phone)
+            }
         
-        validatedCode = input.code.map{ code  in
-            return validationService.validateCode(code)
-        }
+        validatedCode = input.code
+            .map { code -> ValidationResult in
+                return validationService.validateCode(code)
+            }
         
-        validatedPassword = input.password.map{ password  in
-            return validationService.validatePassword(password)
-        }
+        validatedPassword = input.password
+            .map { password -> ValidationResult in
+                return validationService.validatePassword(password)
+            }
         
         validatedPasswordRepeated = Driver.combineLatest(input.password, input.repeatedPassword, resultSelector: validationService.validateRepeatedPassword)
         
         
         sendingIn = input.sendCodeTaps.withLatestFrom(input.phone)
             .flatMapLatest { phone -> Driver<ValidationResult> in
-                return API.sendVerificationCode(phone).asDriver(onErrorJustReturn: .failed(message: "Send code failed"))
+                return API.sendVerificationCode(phone)
+                    .asDriver(onErrorJustReturn: .failed(message: sendVerificationCodeErrorMessage))
             }
             .flatMapLatest { validation -> Driver<Bool> in
-                return wireframe
-                    .promptFor(validation.description, cancelAction: "OK", actions: [])
+                return wireframe.promptFor(validation.description, cancelAction: "OK", actions: [])
                     .map { _ -> Bool in
                         return validation.isValid
                     }
@@ -80,14 +83,13 @@ class ResetPasswordViewModel {
             let resetInfo = Driver.combineLatest(input.phone, input.code, input.password, input.repeatedPassword) { ($0, $1, $2, $3) }
         
             resetIn = input.resetPasswordTaps.withLatestFrom(resetInfo)
-                .flatMapLatest{ (phone, code, password, _) -> Driver<ValidationResult> in
+                .flatMapLatest { (phone, code, password, _) -> Driver<ValidationResult> in
                     return API.reset(phone, code: code, password: password)
                         .trackActivity(signingIn)
-                        .asDriver(onErrorJustReturn: .failed(message: "Reset password failed"))
+                        .asDriver(onErrorJustReturn: .failed(message: registerErrorMessage))
                 }
-                .flatMapLatest{ validationResult -> Driver<Bool> in
-                    return wireframe
-                        .promptFor(validationResult.description, cancelAction: "OK", actions: [])
+                .flatMapLatest { validationResult -> Driver<Bool> in
+                    return wireframe .promptFor(validationResult.description, cancelAction: "OK", actions: [])
                         .map { _  in
                             return validationResult.isValid
                         }
@@ -95,11 +97,25 @@ class ResetPasswordViewModel {
                 }
         
         
-            resetPasswowrdEnabled =  Driver.combineLatest(validatedPhone,validatedCode, validatedPassword, validatedPasswordRepeated, signingIn.asDriver()) { (phone, code, password, passwordRepeated, signingIn) -> Bool in
-                return phone.isValid && code.isValid && password.isValid && passwordRepeated.isValid && !signingIn
-            }
+            resetPasswowrdEnabled =  Driver.combineLatest(
+                validatedPhone,validatedCode,
+                validatedPassword,
+                validatedPasswordRepeated,
+                signingIn.asDriver()
+            )   { phone, code, password, passwordRepeated, signingIn in
+                    phone.isValid &&
+                    code.isValid &&
+                    password.isValid &&
+                    passwordRepeated.isValid &&
+                    !signingIn
+                }
+                .distinctUntilChanged()
         
-            sendCodeEnabled = validatedPhone.map{ $0.isValid }
+            sendCodeEnabled = validatedPhone
+                .map{
+                    $0.isValid
+                }
+                .distinctUntilChanged()
         
         }
     

@@ -10,6 +10,9 @@
 import RxSwift
 
 
+let loginErrorMessage = "Login failed"
+
+
 protocol LoginAPI {
     func signin(_ phone: String, password: String, automaticLogin: Bool) -> Observable<ValidationResult>
 }

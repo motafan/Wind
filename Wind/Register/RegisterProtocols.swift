@@ -24,7 +24,7 @@ enum Result<T, E: Error> {
 
 
 
-
+let registerErrorMessage = "Register failed"
 
 protocol RegisterAPI {
     func signup(_ phone: String, username: String, password: String, card: Data) -> Observable<ValidationResult>

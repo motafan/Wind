@@ -205,16 +205,18 @@ class RegisterDefaultAPI: RegisterAPI {
     
     func signup(_ phone: String, username: String, password: String, card: Data) -> Observable<ValidationResult> {
         let url = "http://mqaa.emoney.cn/mobile/Identity/Register"
-        let parameters = ["Username":phone,
-                          "NikeName": username,
-                          "Password": password,
-                          "ConfirmPassword": password,
-                          "Avatar": card.base64EncodedString()]
+        let parameters = [
+            "Username":phone,
+            "NikeName": username,
+            "Password": password,
+            "ConfirmPassword": password,
+            "Avatar": card.base64EncodedString()
+        ]
         return RxAlamofire
             .requestJSON(.post, url, parameters: parameters)
             .debug()
             .map{ (response, value) in
-               return ValidationResult.analysis(response, value: value, generalErrorMessage: "Register failed")
+               return ValidationResult.parse(response, value: value, generalErrorMessage: registerErrorMessage)
             }
     }
     

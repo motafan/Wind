@@ -21,7 +21,7 @@ class ResetPasswordDefaultAPI: ResetPasswordAPI {
         return RxAlamofire.requestJSON(.post, url, parameters: parameters)
             .debug()
             .map{ (response, value) in
-                return ValidationResult.analysis(response, value: value, generalErrorMessage: "Reset password failed")
+                return ValidationResult.parse(response, value: value, generalErrorMessage: resetPasswordErrorMessage)
             }
         
     }
@@ -32,7 +32,7 @@ class ResetPasswordDefaultAPI: ResetPasswordAPI {
         return RxAlamofire.requestJSON(.post, url, parameters: parameters)
             .debug()
             .map{ (response, value) in
-               return ValidationResult.analysis(response, value: value, generalErrorMessage: "Send code failed")
+               return ValidationResult.parse(response, value: value, generalErrorMessage: sendVerificationCodeErrorMessage)
             }
     }
 

@@ -29,7 +29,7 @@ extension ValidationResult {
 
 extension ValidationResult {
     
-    static func analysis(_ respnese: HTTPURLResponse, value: Any, generalErrorMessage: String) -> ValidationResult {
+    static func parse(_ respnese: HTTPURLResponse, value: Any, generalErrorMessage: String) -> ValidationResult {
         guard let result = value as? [String: Any] else {
             return .failed(message: generalErrorMessage)
         }

@@ -24,7 +24,8 @@ class SignupViewModel {
     // Is signing process in progress
     let signingIn: Driver<Bool>
     
-    init(input:(
+    init(
+        input:(
             phone: Driver<String>,
             username: Driver<String>,
             password: Driver<String>,
@@ -45,41 +46,41 @@ class SignupViewModel {
         let wireframe = dependency.wireframe
         
         validatedPhone = input.phone
-            .map{ (phone) -> ValidationResult in
+            .map { phone -> ValidationResult in
                 return validationService.validatePhone(phone)
             }
         
         validatedUsername = input.username
-            .map{ (username) -> ValidationResult in
+            .map { username -> ValidationResult in
                 return validationService.validateUsername(username)
             }
         
         validatedPassword = input.password
-            .map{ (password) -> ValidationResult in
+            .map { password -> ValidationResult in
                return validationService.validatePassword(password)
             }
         
         validatedPasswordRepeated  = Driver.combineLatest(input.password, input.repeatedPassword, resultSelector: validationService.validateRepeatedPassword)
         
         validatedCard = input.card
-            .map{ (card) -> ValidationResult in
+            .map { card -> ValidationResult in
                return validationService.validateCard(card)
             }
         
         validatedAgreement = input.agreement
-            .map({ agreement -> ValidationResult in
+            .map { agreement -> ValidationResult in
                 return validationService.validateAgreement(agreement)
-            })
+            }
         
         let signingIn = ActivityIndicator()
         self.signingIn = signingIn.asDriver()
         
         let inputInfo = Driver.combineLatest(input.phone, input.username, input.password, input.card) { ($0, $1, $2, $3) }
         self.signedIn = input.signupTaps.withLatestFrom(inputInfo)
-            .flatMapLatest{ (phone, username, password, card) in
+            .flatMapLatest { (phone, username, password, card) in
                 return API.signup(phone, username: username, password: password, card: card)
                     .trackActivity(signingIn)
-                    .asDriver(onErrorJustReturn: .failed(message: "Register failed"))
+                    .asDriver(onErrorJustReturn: .failed(message: registerErrorMessage))
             }
             .flatMapLatest { signingIn -> Driver<Bool> in
                 let message = signingIn.description
@@ -91,8 +92,22 @@ class SignupViewModel {
                     .asDriver(onErrorJustReturn: false)
             }
         
-        signupEnabled = Driver.combineLatest(validatedPhone, validatedUsername, validatedPassword, validatedPasswordRepeated,validatedCard, validatedAgreement, signingIn.asDriver()) { (phone, username, password, passwordRepeated, card, agreement, signingIn) in
-                return phone.isValid && username.isValid && password.isValid && passwordRepeated.isValid && card.isValid && agreement.isValid && !signingIn
+        signupEnabled = Driver.combineLatest(
+            validatedPhone,
+            validatedUsername,
+            validatedPassword,
+            validatedPasswordRepeated,
+            validatedCard,
+            validatedAgreement,
+            signingIn.asDriver()
+        )   { phone, username, password, passwordRepeated, card, agreement, signingIn in
+                phone.isValid &&
+                username.isValid &&
+                password.isValid &&
+                passwordRepeated.isValid &&
+                card.isValid &&
+                agreement.isValid &&
+                !signingIn
             }
             .distinctUntilChanged()
         

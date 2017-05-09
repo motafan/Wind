@@ -54,7 +54,7 @@ class RegisterViewController: UIViewController {
         mediaPicker = RxMediaPicker(delegate: self)
         // Do any additional setup after loading the view.
 
-        let  viewModel  = SignupViewModel(
+        let viewModel = SignupViewModel(
             input: (
                 phone: phoneOutlet.rx.text.orEmpty.asDriver(),
                 username: usernameOutlet.rx.text.orEmpty.asDriver(),
@@ -132,12 +132,12 @@ class RegisterViewController: UIViewController {
                         return self.selectImageForTitle(title)
                     }
                     .observeOn(ConcurrentDispatchQueueScheduler(qos: .userInteractive))
-                    .map{ (originImage,editImage) -> (UIImage, UIImage?) in
+                    .map{ (originImage, editImage) -> (UIImage, UIImage?) in
                         return (originImage.io.compress(),editImage?.io.compress())
                     }
-                    .asDriver(onErrorJustReturn: (UIImage(),nil))
+                    .asDriver(onErrorJustReturn: (UIImage(), nil))
             }
-           .map{ (originImage,editImage) -> (UIImage, Data) in
+           .map { (originImage, editImage) -> (UIImage, Data) in
                 let image = editImage ?? originImage
                 let data = image.kf.pngRepresentation() ?? Data()
                 return (image, data)
@@ -160,7 +160,7 @@ class RegisterViewController: UIViewController {
     
     private func selectImageForTitle(_ title: String) -> Observable<(UIImage, UIImage?)> {
         if title == "取消" || (DeviceGuru.isSimulator && title == "拍照") {
-            return Observable.never()
+            return Observable.empty()
         }
         else if title == "拍照" {
             return self.mediaPicker.takePhoto()
