@@ -74,11 +74,11 @@ class ResetPasswordViewController: UIViewController {
             .disposed(by: rx_disposeBag)
         
         viewModel.sendingIn
-            .debug("sendingIn")
+            .drive()
             .disposed(by: rx_disposeBag)
         
         viewModel.resetIn
-            .debug("resetIn")
+            .drive()
             .disposed(by: rx_disposeBag)
         
         viewModel.sendCodeEnabled

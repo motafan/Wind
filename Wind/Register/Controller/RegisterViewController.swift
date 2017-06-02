@@ -89,11 +89,11 @@ class RegisterViewController: UIViewController {
             .disposed(by: rx_disposeBag)
         
         viewModel.validatedCard
-            .debug("validatedCard")
+            .drive()
             .disposed(by: rx_disposeBag)
         
         viewModel.validatedAgreement
-            .debug("validatedAgreement")
+            .drive()
             .disposed(by: rx_disposeBag)
         
         viewModel.signingIn
@@ -137,7 +137,7 @@ class RegisterViewController: UIViewController {
                     }
                     .asDriver(onErrorJustReturn: (UIImage(), nil))
             }
-           .map { (originImage, editImage) -> (UIImage, Data) in
+            .map { (originImage, editImage) -> (UIImage, Data) in
                 let image = editImage ?? originImage
                 let data = image.kf.pngRepresentation() ?? Data()
                 return (image, data)

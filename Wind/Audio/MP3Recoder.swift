@@ -41,13 +41,14 @@ final public class MP3Bot: NSObject {
         var recordFormat = self.recordFormat!
         
         // 设置回调函数
-        AudioQueueNewInput(&recordFormat,
-                           AudioQueueInputCallback,
-                           userData,
-                           CFRunLoopGetCurrent(),
-                           nil,
-                           0,
-                           &audioQueue)
+        AudioQueueNewInput(
+            &recordFormat,
+            AudioQueueInputCallback,
+            userData,
+            CFRunLoopGetCurrent(),
+            nil,
+            0,
+            &audioQueue)
         // 创建缓冲器
         for _ in 0..<Constant.bufferNum {
             var buffer: AudioQueueBufferRef? = nil
@@ -127,9 +128,8 @@ func AudioQueueInputCallback(inUserData: UnsafeMutableRawPointer?,
 
 
 public func synchronized(_ lock: Any, handle: () ->()) {
-    objc_sync_enter(lock)
+    objc_sync_enter(lock);  defer { objc_sync_exit(lock) }
     handle()
-    objc_sync_exit(lock)
 }
 
 private func LameGetConfigContext() -> lame_t! {

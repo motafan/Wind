@@ -5,9 +5,9 @@ source "https://github.com/CocoaPods/Specs.git”
 inhibit_all_warnings!
 
 def pods
-    pod 'RxSwift',          '~> 3.4.1'
-    pod 'RxCocoa',          '~> 3.4.1'
-    pod 'RxBlocking',       '~> 3.4.1'
+    pod 'RxSwift'#,          '~> 3.5.0'
+    pod 'RxCocoa'#,          '~> 3.5.0'
+    pod 'RxBlocking'#,       '~> 3.5.0'
     pod 'RxDataSources',    '~> 1.0.3'
     pod 'RxSwiftUtilities', '~> 1.0.1'
     pod 'RxMediaPicker',    '~> 1.1.0'
@@ -16,15 +16,15 @@ def pods
     #pod 'ReSwift',          '~> 4.0.0'
     #pod 'ReSwiftRouter',    '~> 0.5.1'
     #pod 'ReSwiftRecorder',  '~> 0.4.0'
-    pod 'RxOptional',       '~> 3.1.3'
-    pod 'NSObject+Rx',      '~> 2.1.0'
-    pod 'SwiftTheme',       '~> 0.3.2'
+    #pod 'RxOptional',       '~> 3.1.3'
+    pod 'NSObject+Rx',      '~> 2.3.0'
+    pod 'SwiftTheme',       '~> 0.3.3'
     pod 'SwifterSwift',     '~> 1.6.4'
     pod 'Kingfisher',       '~> 3.9.1'
     pod 'SwiftyJSON',       '~> 3.1.4'
     pod 'HandyJSON',        '~> 1.7.1'
     pod 'Alamofire',        '~> 4.4.0'
-    pod 'Moya',             '~> 8.0.4', :subspecs => ['Core', 'RxSwift']
+    pod 'Moya',             '~> 8.0.5', :subspecs => ['Core', 'RxSwift']
     pod 'SnapKit',          '~> 3.2.0'
     pod 'DeviceGuru',       '~> 2.1.0'
     pod 'AudioBot',         '~> 1.1.1'
@@ -34,7 +34,7 @@ def pods
     pod 'IBAnimatable',     '~> 4.1.0'
     pod 'R.swift',          '~> 3.2.0'
     pod 'Router',           :git=> "https://github.com/ilumanxi/Router.git" #,           '~> 1.0.0',
-    pod 'SwiftDate',        '~> 4.1.1'
+    pod 'SwiftDate',        '~> 4.1.2'
     pod 'mp3lame-for-ios',  '~> 0.1.1'
 end
 

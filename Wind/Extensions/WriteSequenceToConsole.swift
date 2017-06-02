@@ -8,25 +8,4 @@
 
 import RxSwift
 import RxCocoa
-import UIKit
 
-extension ObservableType {
-    
-    /**
-     Add observer with `id` and print each emitted event.
-     - parameter id: an identifier for the subscription.
-     */
-    func debug(_ id: String) -> Disposable {
-        return subscribe { debugPrint("Subscription:", id, "Event:", $0) }
-    }
-    
-}
-
-
-extension SharedSequenceConvertibleType where Self.SharingStrategy == RxCocoa.DriverSharingStrategy {
-
-    func debug(_ id: String) -> Disposable {
-        return self.asObservable().debug(id)
-    }
-
-}

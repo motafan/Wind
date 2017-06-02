@@ -48,11 +48,12 @@ class LoginViewController: UIViewController {
         
         
         viewModel.validatedPhone
-            .debug("validatedPhone")
+            .drive()
             .disposed(by: rx_disposeBag)
+
         
         viewModel.validatedPassword
-            .debug("validatedPassword")
+            .drive()
             .disposed(by: rx_disposeBag)
         
         automaticLoginOutlet.rx.tap
@@ -72,7 +73,7 @@ class LoginViewController: UIViewController {
             .disposed(by: rx_disposeBag)
         
         viewModel.signedIn
-            .debug("signedIn")
+            .drive()
             .disposed(by: rx_disposeBag)
         
         viewModel.signinEnabled
