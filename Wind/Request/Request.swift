@@ -9,8 +9,8 @@
 import Foundation
 
 public enum HTTPMethod: String {
-    case GET
-    case POST
+    case get
+    case post
 }
 
 public protocol Decodable {

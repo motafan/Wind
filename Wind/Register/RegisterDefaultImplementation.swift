@@ -215,9 +215,10 @@ class RegisterDefaultAPI: RegisterAPI {
         return RxAlamofire
             .requestJSON(.post, url, parameters: parameters)
             .debug()
-            .map { (response, value) in
-               return ValidationResult.parse(response, value: value, generalErrorMessage: registerErrorMessage)
-            }
+            .map({ (arg) -> ValidationResult in
+                let (response, value) = arg
+                return ValidationResult.parse(response, value: value, generalErrorMessage: registerErrorMessage)
+            })
     }
     
 }

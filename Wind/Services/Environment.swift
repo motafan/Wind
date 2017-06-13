@@ -13,5 +13,5 @@ enum Environment: String {
     case master
     case realse
     case test
-    case dubug
+    case debug
 }

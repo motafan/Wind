@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '8.0'
+platform :ios, '9.0'
+# Comment the next line if you're not using Swift and don't want to use dynamic frameworks
 use_frameworks!
 source "https://github.com/CocoaPods/Specs.git”
 inhibit_all_warnings!
@@ -20,7 +21,7 @@ def pods
     pod 'NSObject+Rx',      '~> 2.3.0'
     pod 'SwiftTheme',       '~> 0.3.3'
     pod 'SwifterSwift',     '~> 1.6.4'
-    pod 'Kingfisher',       '~> 3.9.1'
+    pod 'Kingfisher',       '~> 3.10.1'
     pod 'SwiftyJSON',       '~> 3.1.4'
     pod 'HandyJSON',        '~> 1.7.1'
     pod 'Alamofire',        '~> 4.4.0'
@@ -30,19 +31,16 @@ def pods
     pod 'AudioBot',         '~> 1.1.1'
     pod 'AutoReview',       '~> 1.0.0'
     pod 'Ruler',            '~> 1.0.1'
-    pod 'RealmSwift',       '~> 2.7.0'
+    pod 'RealmSwift',       '~> 2.8.0'
     pod 'IBAnimatable',     '~> 4.1.0'
     pod 'R.swift',          '~> 3.2.0'
     pod 'Router',           :git=> "https://github.com/ilumanxi/Router.git" #,           '~> 1.0.0',
-    pod 'SwiftDate',        '~> 4.1.2'
+    #pod 'SwiftDate',        '~> 4.1.2'
     pod 'mp3lame-for-ios',  '~> 0.1.1'
 end
 
-
 target 'Wind' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-
+    
   # Pods for Wind
   pods
   
@@ -56,4 +54,12 @@ target 'Wind' do
     # Pods for testing
   end
 
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '3.2'
+        end
+    end
 end

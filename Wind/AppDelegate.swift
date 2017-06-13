@@ -7,8 +7,13 @@
 //
 
 import UIKit
-import CoreAudio
 
+func debug() {
+    let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
+    _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
+    let overlay = overlayClass?.perform(NSSelectorFromString("overlay")).takeUnretainedValue() as? UIWindow
+    _ = overlay?.perform(NSSelectorFromString("toggleVisibility"))
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,15 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        
         LaunchScreenViewController.showForRemainDuration(3)
-        
-        let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
-        _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
-        let overlay = overlayClass?.perform(NSSelectorFromString("overlay")).takeUnretainedValue() as? UIWindow
-        _ = overlay?.perform(NSSelectorFromString("toggleVisibility"))
-        
         return true
     }
 

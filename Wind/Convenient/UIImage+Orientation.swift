@@ -45,7 +45,7 @@ extension ImageOrientationCompatible {
         }
     }
     
-    /// Reactive extensions.
+    /// ImageOrientation extensions.
     public var io: ImageOrientation<Self> {
         get {
             return ImageOrientation(self)

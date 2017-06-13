@@ -9,7 +9,7 @@
 import Foundation
 
 public struct URLSessionClient: Client {
-    public let host = "https://api.fanfan.com"
+    public let host = "https://api.wind.com"
     
     public func send<T: Request>(_ r: T, handler: @escaping (T.Response?) -> Void) {
         let url = URL(string: host.appending(r.path))!

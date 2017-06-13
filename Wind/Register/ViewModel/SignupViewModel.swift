@@ -77,11 +77,11 @@ class SignupViewModel {
         
         let inputInfo = Driver.combineLatest(input.phone, input.username, input.password, input.card) { ($0, $1, $2, $3) }
         self.signedIn = input.signupTaps.withLatestFrom(inputInfo)
-            .flatMapLatest { (phone, username, password, card) in
+            .flatMapLatest({ (arg) -> SharedSequence<DriverSharingStrategy, ValidationResult> in
+                let (phone, username, password, card) = arg
                 return API.signup(phone, username: username, password: password, card: card)
-                    .trackActivity(signingIn)
-                    .asDriver(onErrorJustReturn: .failed(message: registerErrorMessage))
-            }
+                    .trackActivity(signingIn).asDriver(onErrorJustReturn: .failed(message: registerErrorMessage))
+            })
             .flatMapLatest { signingIn -> Driver<Bool> in
                 let message = signingIn.description
                 return wireframe.promptFor(message, cancelAction: "OK", actions: [])

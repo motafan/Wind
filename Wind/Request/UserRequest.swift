@@ -12,6 +12,6 @@ import Foundation
 struct UserResquest: Request {
     typealias Response = Pagination<User>
     var path: String = "users"
-    var method: HTTPMethod = .GET
+    var method: HTTPMethod = .get
     var lastId: Int?
 }

@@ -26,6 +26,7 @@ final public class MP3Bot: NSObject {
     fileprivate var audioBuffer: [AudioQueueBufferRef?] = []
     fileprivate var recordFormat: AudioStreamBasicDescription!
     public private(set) var isRecording: Bool = false
+    var url: URL?
     
     public func startRecord() throws {
         do {
@@ -100,8 +101,6 @@ func AudioQueueInputCallback(inUserData: UnsafeMutableRawPointer?,
                              inStartTime: UnsafePointer<AudioTimeStamp>,
                              inNumPackets: UInt32,
                              inPacketDesc: UnsafePointer<AudioStreamPacketDescription>?) {
-   
-    
     let recoder = Unmanaged<MP3Bot>.fromOpaque(inUserData!).takeUnretainedValue()
     
     if inNumPackets > 0  && recoder.isRecording {
@@ -111,25 +110,16 @@ func AudioQueueInputCallback(inUserData: UnsafeMutableRawPointer?,
         let pcm = buffer.mAudioData.assumingMemoryBound(to: Int16.self)
         let size = lame_encode_buffer(lame, pcm, pcm, Int32(nsamples), &recoder.mp3Buffer, Int32(nsamples * 4))
         let data =  Data(bytes: &recoder.mp3Buffer, count: Int(size))
-        
-        do {
-           var url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-            url.appendPathComponent("fanfan.mp3")
-            
-            try data.write(to: url)
-        } catch let error {
-            print(error)
-        }
-         AudioQueueEnqueueBuffer(inAQ, inBuffer, 0, nil)
-        
-        print(data as NSData)
+        let url = recoder.url ?? FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent("Wind.mp3")
+        try! data.write(to: url)
+        AudioQueueEnqueueBuffer(inAQ, inBuffer, 0, nil)
     }
 }
 
 
-public func synchronized(_ lock: Any, handle: () ->()) {
+public func synchronized(_ lock: Any, handler: () ->()) {
     objc_sync_enter(lock);  defer { objc_sync_exit(lock) }
-    handle()
+    handler()
 }
 
 private func LameGetConfigContext() -> lame_t! {

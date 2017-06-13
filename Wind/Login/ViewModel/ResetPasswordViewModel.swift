@@ -83,7 +83,9 @@ class ResetPasswordViewModel {
             let resetInfo = Driver.combineLatest(input.phone, input.code, input.password, input.repeatedPassword) { ($0, $1, $2, $3) }
         
             resetIn = input.resetPasswordTaps.withLatestFrom(resetInfo)
-                .flatMapLatest { (phone, code, password, _) -> Driver<ValidationResult> in
+                .flatMapLatest { (arg) -> Driver<ValidationResult> in
+                    
+                    let (phone, code, password, _) = arg
                     return API.reset(phone, code: code, password: password)
                         .trackActivity(signingIn)
                         .asDriver(onErrorJustReturn: .failed(message: registerErrorMessage))

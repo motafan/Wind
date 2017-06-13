@@ -132,20 +132,32 @@ class RegisterViewController: UIViewController {
                         return self.selectImageForTitle(title)
                     }
                     .observeOn(ConcurrentDispatchQueueScheduler(qos: .userInteractive))
-                    .map{ (originImage, editImage) -> (UIImage, UIImage?) in
+                    .map{ (arg) -> (UIImage, UIImage?) in
+                        
+                        let (originImage, editImage) = arg
                         return (originImage.io.compress(),editImage?.io.compress())
                     }
                     .asDriver(onErrorJustReturn: (UIImage(), nil))
             }
-            .map { (originImage, editImage) -> (UIImage, Data) in
+            .map { (arg) -> (UIImage, Data) in
+                let (originImage, editImage) = arg
                 let image = editImage ?? originImage
                 let data = image.kf.pngRepresentation() ?? Data()
                 return (image, data)
             }
-            .drive(onNext: { (image, data) in
+            .drive(onNext: { (arg) in
+                let (image, data) = arg
                 self.cardOutlet.image = image
                 self.imageSubject.value = data
-            })
+            }, onCompleted: {
+                
+            }) {
+                
+            }
+//            .drive(onNext: { (image, data) in
+//                self.cardOutlet.image = image
+//                self.imageSubject.value = data
+//            })
             .disposed(by: rx_disposeBag)
         addImageOutlet.addGestureRecognizer(tapImage)
         

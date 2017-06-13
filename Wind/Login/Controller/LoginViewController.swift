@@ -30,8 +30,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         let viewModel = SigninViewModel(
             input: (
                 phone: phoneOutlet.rx.text.orEmpty.asDriver(),
@@ -46,11 +44,9 @@ class LoginViewController: UIViewController {
             )
         )
         
-        
         viewModel.validatedPhone
             .drive()
             .disposed(by: rx_disposeBag)
-
         
         viewModel.validatedPassword
             .drive()
@@ -89,6 +85,4 @@ class LoginViewController: UIViewController {
         view.addGestureRecognizer(tapBackground)
         
     }
-    
-
 }

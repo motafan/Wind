@@ -56,7 +56,8 @@ class SigninViewModel {
         let signinInfo = Driver.combineLatest(input.phone, input.password, input.automaticLogin){ ($0, $1, $2) }
         
         signedIn = input.signinTaps.withLatestFrom(signinInfo)
-            .flatMapLatest { (phone,password,automaticLogin) -> Driver<ValidationResult> in
+            .flatMapLatest { (arg) -> Driver<ValidationResult> in
+                let (phone, password, automaticLogin) = arg
                 return API.signin(phone, password: password, automaticLogin: automaticLogin)
                     .trackActivity(signingIn)
                     .asDriver(onErrorJustReturn: .failed(message: loginErrorMessage))

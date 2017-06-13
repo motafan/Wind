@@ -22,7 +22,7 @@ extension UIViewController: StoryboardIdentifiableType { }
 
 public extension UIStoryboard {
     
-    public enum Storyboard : String {
+    public enum Storyboard: String {
         case Main
     }
     
@@ -34,7 +34,7 @@ public extension UIStoryboard {
         return UIStoryboard(name: storyboard.rawValue, bundle: bundle)
     }
     
-    public func instantiateViewController<T: UIViewController>() -> T where T: StoryboardIdentifiableType {
+    public func instantiateViewController<T: UIViewController>() -> T {
         guard let viewController = self.instantiateViewController(withIdentifier: T.storyboardIdentifiable) as? T else {
             fatalError("Couldn't instantiate view controller with identifier \(T.storyboardIdentifiable) ")
         }
