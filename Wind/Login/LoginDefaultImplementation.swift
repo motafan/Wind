@@ -22,8 +22,8 @@ class LoginDefaultAPI: LoginAPI {
         
         return RxAlamofire.requestJSON(.post, url, parameters: parameters)
             .debug()
-            .map { (arg) -> ValidationResult in
-                let (response, value) = arg
+            .map { (pair) -> ValidationResult in
+                let (response, value) = pair
                 return ValidationResult.parse(response, value: value, generalErrorMessage: loginErrorMessage)
             }
     }
@@ -42,7 +42,6 @@ class LoginDefaultValidationService: LoginValidationService {
         return .ok(message: "Phone acceptable")
     }
 
-    
     func validatePassword(_ password: String) -> ValidationResult {
         let numberOfCharacters = password.length
         if numberOfCharacters == 0 {

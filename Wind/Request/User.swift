@@ -9,7 +9,7 @@
 
 import UIKit
 
-struct User {
+struct User: Codable {
     let name: String
     let message: String
     let id: Int
@@ -17,14 +17,9 @@ struct User {
         guard let obj = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject] else {
             return nil
         }
-        guard let name = obj?["name"] as? String else {
-            return nil
-        }
-        guard let message = obj?["message"] as? String else {
-            return nil
-        }
-        
-        guard let id = obj?["id"] as? Int else {
+        guard let name = obj?["name"] as? String,
+            let message = obj?["message"] as? String,
+            let id = obj?["id"] as? Int else {
             return nil
         }
         
@@ -34,10 +29,10 @@ struct User {
     }
 }
 
-
 extension User: Decodable {
     static func parse(data: Data) -> User? {
-        return User(data: data)
+        let json =  JSONDecoder()
+        return try? json.decode(self, from: data)
     }
 }
 

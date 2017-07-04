@@ -1,14 +1,14 @@
 PODS:
-  - Alamofire (4.4.0)
+  - Alamofire (4.5.0)
   - AudioBot (1.1.1)
   - AutoReview (1.0.0)
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
   - DeviceGuru (2.1.0)
-  - HandyJSON (1.7.1)
+  - HandyJSON (1.7.2)
   - IBAnimatable (4.1.0)
-  - Kingfisher (3.10.1)
+  - Kingfisher (3.10.2)
   - Moya/Core (8.0.5):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
@@ -21,24 +21,24 @@ PODS:
   - R.swift (3.2.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
-  - Realm (2.8.1):
-    - Realm/Headers (= 2.8.1)
-  - Realm/Headers (2.8.1)
-  - RealmSwift (2.8.1):
-    - Realm (= 2.8.1)
+  - Realm (2.8.3):
+    - Realm/Headers (= 2.8.3)
+  - Realm/Headers (2.8.3)
+  - RealmSwift (2.8.3):
+    - Realm (= 2.8.3)
   - Result (3.2.3)
   - Router (1.0.0)
   - Ruler (1.0.1)
-  - RxAlamofire (3.0.2):
-    - RxAlamofire/Core (= 3.0.2)
-  - RxAlamofire/Core (3.0.2):
+  - RxAlamofire (3.0.3):
+    - RxAlamofire/Core (= 3.0.3)
+  - RxAlamofire/Core (3.0.3):
     - Alamofire (~> 4.0)
     - RxSwift (~> 3.0)
   - RxBlocking (3.5.0):
     - RxSwift (~> 3.4)
   - RxCocoa (3.5.0):
     - RxSwift (~> 3.4)
-  - RxDataSources (1.0.3):
+  - RxDataSources (1.0.4):
     - RxCocoa (~> 3.0)
     - RxSwift (~> 3.0)
   - RxMediaPicker (1.1.0):
@@ -48,35 +48,37 @@ PODS:
     - RxCocoa (~> 3.0)
     - RxSwift (~> 3.0)
   - SnapKit (3.2.0)
+  - SwiftDate (4.1.2)
   - SwifterSwift (1.6.4)
   - SwiftTheme (0.3.3)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.4.0)
+  - Alamofire (~> 4.5.0)
   - AudioBot (~> 1.1.1)
   - AutoReview (~> 1.0.0)
   - Charts (~> 3.0.2)
   - DeviceGuru (~> 2.1.0)
-  - HandyJSON (~> 1.7.1)
+  - HandyJSON (~> 1.7.2)
   - IBAnimatable (~> 4.1.0)
-  - Kingfisher (~> 3.10.1)
+  - Kingfisher (~> 3.10.2)
   - Moya/Core (~> 8.0.5)
   - Moya/RxSwift (~> 8.0.5)
   - mp3lame-for-ios (~> 0.1.1)
   - NSObject+Rx (~> 2.3.0)
   - R.swift (~> 3.2.0)
-  - RealmSwift (~> 2.8.0)
+  - RealmSwift (~> 2.8.3)
   - Router (from `https://github.com/ilumanxi/Router.git`)
   - Ruler (~> 1.0.1)
-  - RxAlamofire (~> 3.0.2)
+  - RxAlamofire (~> 3.0.3)
   - RxBlocking
   - RxCocoa
-  - RxDataSources (~> 1.0.3)
+  - RxDataSources (~> 1.0.4)
   - RxMediaPicker (~> 1.1.0)
   - RxSwift
   - RxSwiftUtilities (~> 1.0.1)
   - SnapKit (~> 3.2.0)
+  - SwiftDate (~> 4.1.2)
   - SwifterSwift (~> 1.6.4)
   - SwiftTheme (~> 0.3.3)
   - SwiftyJSON (~> 3.1.4)
@@ -91,36 +93,37 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ilumanxi/Router.git
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AudioBot: b7bcf3b18dc2cdccba14d798400c708908ad203d
   AutoReview: 6dd11897fe97eda0dca3a6aafc13eeeca453620a
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   DeviceGuru: 093cb20ca6b074c9e33df2e2791c521ed67264a5
-  HandyJSON: 54b6ce942795f7b2e61b82fe73cf25d9f139d125
+  HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   IBAnimatable: 0fd2c9fd38c4798d71bcc18dbd87d473a7df2577
-  Kingfisher: 33a1b82140fcb14a9fc13f78dfde2a03ff8de8cb
+  Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   mp3lame-for-ios: 4daeb5686885be66438154050e3fe975d4ee1f07
   NSObject+Rx: 38170f84b948152c05c57260cb853e387a5519d1
   R.swift: 207a372a2b5977caef440c696a368009460641d1
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
-  Realm: 2627602ad6818451f0cb8c2a6e072f7f10a5f360
-  RealmSwift: 4764ca7657f2193c256fb032c0b123926f70dbcd
+  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
+  RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   Router: 6088d6d321e097070d5ea4bd792cb015dfa0fbb4
   Ruler: 199fa3d7b01f680577ea662e9ea409477ae55181
-  RxAlamofire: bc53604b29fd2d220cfaa490c736cc4500819f34
+  RxAlamofire: 5eb39188c4917ad98127c0ecb4878a61b7517003
   RxBlocking: 471315e18b87c5ed4b9d0c69a57dfdbca5c01af1
   RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
-  RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
+  RxDataSources: b3389acc5fe2eefb8fcd81a2b76a876ad08bc82a
   RxMediaPicker: 428f6923656e61cd2c02534e3725598dded12a2f
   RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
   RxSwiftUtilities: 57e77c17b885931c37aa038f114f14fd1f478ac2
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftDate: 2dfdebd4f67ae71c9c3e2413ee3c56947f302858
   SwifterSwift: 92c73c47c3cbf7d5f788adf6459bf07b5d23d3fb
   SwiftTheme: 85f84747a48749b5b3df7c3e96fc0b1d45677d30
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 2d27435d1d0500505aba1bb958f448112510f059
+PODFILE CHECKSUM: f020a32a1370e5809fdba7159f01b5f5d32330ee
 
 COCOAPODS: 1.2.1

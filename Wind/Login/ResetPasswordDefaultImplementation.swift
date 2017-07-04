@@ -10,7 +10,6 @@ import RxSwift
 import RxCocoa
 import RxAlamofire
 
-
 class ResetPasswordDefaultAPI: ResetPasswordAPI {
     
     static let share = ResetPasswordDefaultAPI()
@@ -20,8 +19,8 @@ class ResetPasswordDefaultAPI: ResetPasswordAPI {
         let parameters = ["mobile": phone, "smsCode": code, "newPassword": password, "newPassword2": password]
         return RxAlamofire.requestJSON(.post, url, parameters: parameters)
             .debug()
-            .map { (arg) -> ValidationResult in
-                let (response, value) = arg
+            .map { (pair) -> ValidationResult in
+                let (response, value) = pair
                 return ValidationResult.parse(response, value: value, generalErrorMessage: resetPasswordErrorMessage)
             }
         
@@ -32,8 +31,8 @@ class ResetPasswordDefaultAPI: ResetPasswordAPI {
         let parameters = ["mobile": phone]
         return RxAlamofire.requestJSON(.post, url, parameters: parameters)
             .debug()
-            .map { (arg) -> ValidationResult in
-                let (response, value) = arg
+            .map { (pair) -> ValidationResult in
+                let (response, value) = pair
                return ValidationResult.parse(response, value: value, generalErrorMessage: sendVerificationCodeErrorMessage)
             }
     }

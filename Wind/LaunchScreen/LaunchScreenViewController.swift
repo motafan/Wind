@@ -32,12 +32,12 @@ extension UIScreen {
 
 extension UIImage {
     
-    struct LaunchImageAssociatedKeys {
-        static let UILaunchImages = "UILaunchImages"
-        static let UILaunchImageMinimumOSVersion = "UILaunchImageMinimumOSVersion"
-        static let UILaunchImageName = "UILaunchImageName"
-        static let UILaunchImageOrientation = "UILaunchImageOrientation"
-        static let UILaunchImageSize = "UILaunchImageSize"
+   private struct UILaunchImageAssociatedKeys {
+        static let images = "UILaunchImages"
+        static let minimumOSVersion = "UILaunchImageMinimumOSVersion"
+        static let imageName = "UILaunchImageName"
+        static let orientation = "UILaunchImageOrientation"
+        static let imageSize = "UILaunchImageSize"
     }
     
     static func launchImage() -> UIImage? {
@@ -45,20 +45,28 @@ extension UIImage {
         let UILaunchImageSize = UIScreen.main.size
         let UILaunchImageOrientation = UIDevice.current.orientation.launchImageDescription
         
-        guard let UILaunchImages = Bundle.main.infoDictionary?[LaunchImageAssociatedKeys.UILaunchImages]
-            as? Array<Dictionary<String,String>>  else {
+        guard let UILaunchImages = Bundle.main.infoDictionary?[UILaunchImageAssociatedKeys.images]
+            as? Array<Dictionary<String, String>>  else {
             return nil
         }
         
-        let UILaunchImageName = UILaunchImages.filter { UILaunchImage -> Bool in
-            if UILaunchImageOrientation == UILaunchImage[LaunchImageAssociatedKeys.UILaunchImageOrientation] &&
-                UILaunchImageSize == CGSizeFromString(UILaunchImage[LaunchImageAssociatedKeys.UILaunchImageSize] ?? ""){
-                return true
+        let launchImageName = UILaunchImages
+            .filter { launchImage -> Bool in
+                guard let launchImageSize = launchImage[UILaunchImageAssociatedKeys.imageSize],
+                    let launchImageOrientation = launchImage[UILaunchImageAssociatedKeys.orientation] else {
+                    return false
+                }
+                
+                return UILaunchImageOrientation == launchImageOrientation &&
+                    UILaunchImageSize == CGSizeFromString(launchImageSize)
             }
-            return false
-        }.first?[LaunchImageAssociatedKeys.UILaunchImageName] ?? ""
+            .first?[UILaunchImageAssociatedKeys.imageName]
         
-        return UIImage(named: UILaunchImageName)
+        guard let _ = launchImageName else {
+            return nil
+        }
+        
+        return UIImage(named: launchImageName!)
 
     }
 }
@@ -95,6 +103,7 @@ class LaunchScreenViewController: UIViewController {
             UIView.animate(withDuration: 1, delay: duration, options: [], animations: {
                 imageView.transform = imageView.transform.scaledBy(x: 1.5, y: 1.5)
                 imageView.alpha = 0.0
+              UIApplication.shared.isStatusBarHidden = false
             }, completion: { _ in
                 window = nil
             })

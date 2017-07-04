@@ -27,7 +27,7 @@ class ResetPasswordViewModel {
     
     
     init(
-        input:(
+        input: (
             phone: Driver<String>,
             code: Driver<String>,
             password: Driver<String>,
@@ -83,9 +83,9 @@ class ResetPasswordViewModel {
             let resetInfo = Driver.combineLatest(input.phone, input.code, input.password, input.repeatedPassword) { ($0, $1, $2, $3) }
         
             resetIn = input.resetPasswordTaps.withLatestFrom(resetInfo)
-                .flatMapLatest { (arg) -> Driver<ValidationResult> in
+                .flatMapLatest { (args) -> Driver<ValidationResult> in
                     
-                    let (phone, code, password, _) = arg
+                    let (phone, code, password, _) = args
                     return API.reset(phone, code: code, password: password)
                         .trackActivity(signingIn)
                         .asDriver(onErrorJustReturn: .failed(message: registerErrorMessage))
@@ -114,7 +114,7 @@ class ResetPasswordViewModel {
                 .distinctUntilChanged()
         
             sendCodeEnabled = validatedPhone
-                .map{
+                .map {
                     $0.isValid
                 }
                 .distinctUntilChanged()

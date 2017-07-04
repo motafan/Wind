@@ -112,6 +112,7 @@
 		F33E92111EB9BEED003CF6DC /* BindingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
 		F33EF2181EB039E500EFF276 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		F33EF21C1EB041DB00EFF276 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		F37798301F0BD00F0010BB66 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		F38132A21E49B2820043B0D5 /* Reload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reload.swift; sourceTree = "<group>"; };
 		F392F5821EB1BD6800C3DC2C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		F3A1392F1EC19F2100B2ED5A /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +298,7 @@
 				F33EF2181EB039E500EFF276 /* Wireframe.swift */,
 				F33EF21C1EB041DB00EFF276 /* Environment.swift */,
 				F32387121EC045A800C65708 /* ValidationResult.swift */,
+				F37798301F0BD00F0010BB66 /* Validation.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
