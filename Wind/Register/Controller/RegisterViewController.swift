@@ -16,8 +16,8 @@ import DeviceGuru
 
 fileprivate extension DeviceGuru {
     
-    class var isSimulator: Bool {
-        return self.hardware()  == .simulator
+    static var isSimulator: Bool {
+        return self.hardware() == .simulator
     }
     
 }
@@ -126,25 +126,28 @@ class RegisterViewController: UIViewController {
         let tapImage = UITapGestureRecognizer()
         tapImage.rx.event
             .asDriver()
+            .do(onNext: { [weak self] _ in
+                self?.view.endEditing(true)
+            })
             .flatMapLatest { _ -> Driver<(UIImage, UIImage?)> in
                 return DefaultWireframe.shared.guidanceFor(cancelAction: "取消", actions: ["拍照","相册"])
                     .flatMapLatest { title  -> Observable<(UIImage, UIImage?)> in
                         return self.selectImageForTitle(title)
                     }
                     .observeOn(ConcurrentDispatchQueueScheduler(qos: .userInteractive))
-                    .map{ (pair) -> (UIImage, UIImage?) in
+                    .map{ pair -> (UIImage, UIImage?) in
                         let (originImage, editImage) = pair
                         return (originImage.io.compress(),editImage?.io.compress())
                     }
                     .asDriver(onErrorJustReturn: (UIImage(), nil))
             }
-            .map { (pair) -> (UIImage, Data) in
+            .map { pair -> (UIImage, Data) in
                 let (originImage, editImage) = pair
                 let image = editImage ?? originImage
                 let data = image.kf.pngRepresentation() ?? Data()
                 return (image, data)
             }
-            .drive(onNext: { (pair) in
+            .drive(onNext: { pair in
                 let (image, data) = pair
                 self.cardOutlet.image = image
                 self.imageSubject.value = data

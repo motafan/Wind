@@ -19,7 +19,7 @@ class ResetPasswordDefaultAPI: ResetPasswordAPI {
         let parameters = ["mobile": phone, "smsCode": code, "newPassword": password, "newPassword2": password]
         return RxAlamofire.requestJSON(.post, url, parameters: parameters)
             .debug()
-            .map { (pair) -> ValidationResult in
+            .map { pair -> ValidationResult in
                 let (response, value) = pair
                 return ValidationResult.parse(response, value: value, generalErrorMessage: resetPasswordErrorMessage)
             }

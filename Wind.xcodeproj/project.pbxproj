@@ -32,6 +32,9 @@
 		F33E92121EB9BEED003CF6DC /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E92111EB9BEED003CF6DC /* BindingExtensions.swift */; };
 		F33EF2191EB039E500EFF276 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF2181EB039E500EFF276 /* Wireframe.swift */; };
 		F33EF21D1EB041DB00EFF276 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33EF21C1EB041DB00EFF276 /* Environment.swift */; };
+		F342DB991F0C85D500843055 /* String+Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342DB981F0C85D500843055 /* String+Length.swift */; };
+		F342DB9B1F0C861A00843055 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342DB9A1F0C861A00843055 /* ValidationManager.swift */; };
+		F342DB9C1F0C865C00843055 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37798301F0BD00F0010BB66 /* Validation.swift */; };
 		F38132A31E49B2820043B0D5 /* Reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38132A21E49B2820043B0D5 /* Reload.swift */; };
 		F392F5831EB1BD6800C3DC2C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F392F5821EB1BD6800C3DC2C /* R.generated.swift */; };
 		F3A139301EC19F2100B2ED5A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A1392F1EC19F2100B2ED5A /* ResetPasswordViewController.swift */; };
@@ -112,6 +115,8 @@
 		F33E92111EB9BEED003CF6DC /* BindingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
 		F33EF2181EB039E500EFF276 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		F33EF21C1EB041DB00EFF276 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		F342DB981F0C85D500843055 /* String+Length.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Length.swift"; sourceTree = "<group>"; };
+		F342DB9A1F0C861A00843055 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		F37798301F0BD00F0010BB66 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		F38132A21E49B2820043B0D5 /* Reload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reload.swift; sourceTree = "<group>"; };
 		F392F5821EB1BD6800C3DC2C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -230,20 +235,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		F323870B1EC0413100C65708 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F323870C1EC0415100C65708 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		F323870D1EC0416C00C65708 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,20 +261,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F33D9CDC1EAF1AC80049CA51 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F33D9CDD1EAF1AE30049CA51 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		F33D9CDE1EAF1AF80049CA51 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +275,7 @@
 				F33EF2181EB039E500EFF276 /* Wireframe.swift */,
 				F33EF21C1EB041DB00EFF276 /* Environment.swift */,
 				F32387121EC045A800C65708 /* ValidationResult.swift */,
+				F342DB9A1F0C861A00843055 /* ValidationManager.swift */,
 				F37798301F0BD00F0010BB66 /* Validation.swift */,
 			);
 			path = Services;
@@ -308,6 +286,7 @@
 			children = (
 				F33E920C1EB97919003CF6DC /* WriteSequenceToConsole.swift */,
 				F33E92111EB9BEED003CF6DC /* BindingExtensions.swift */,
+				F342DB981F0C85D500843055 /* String+Length.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,8 +371,6 @@
 			isa = PBXGroup;
 			children = (
 				F323870D1EC0416C00C65708 /* Controller */,
-				F323870C1EC0415100C65708 /* View */,
-				F323870B1EC0413100C65708 /* Model */,
 				F323870A1EC0411C00C65708 /* ViewModel */,
 				F33B465C1EBACFA100B9BB40 /* Login.storyboard */,
 				F32387141EC0463000C65708 /* LoginProtocols.swift */,
@@ -408,8 +385,6 @@
 			isa = PBXGroup;
 			children = (
 				F33D9CDE1EAF1AF80049CA51 /* ViewModel */,
-				F33D9CDD1EAF1AE30049CA51 /* Model */,
-				F33D9CDC1EAF1AC80049CA51 /* View */,
 				F33D9CDB1EAF1AA70049CA51 /* Controller */,
 				F3CAA1ED1EAEE91B00C6F4AF /* Register.storyboard */,
 				F33D9CE71EAF31700049CA51 /* RegisterProtocols.swift */,
@@ -728,6 +703,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F342DB9B1F0C861A00843055 /* ValidationManager.swift in Sources */,
 				F33EF2191EB039E500EFF276 /* Wireframe.swift in Sources */,
 				F32385AF1EC0036600C65708 /* UIStoryboard+Convenient.swift in Sources */,
 				F32385B01EC0036600C65708 /* UIView+Convenient.swift in Sources */,
@@ -746,12 +722,14 @@
 				F32385AE1EC0036600C65708 /* UIImage+Orientation.swift in Sources */,
 				F32387111EC0441000C65708 /* SigninViewModel.swift in Sources */,
 				F32387131EC045A800C65708 /* ValidationResult.swift in Sources */,
+				F342DB991F0C85D500843055 /* String+Length.swift in Sources */,
 				F33D9CE61EAF1E630049CA51 /* SignupViewModel.swift in Sources */,
 				F3A139361EC1BD2F00B2ED5A /* ResetPasswordDefaultImplementation.swift in Sources */,
 				F33EF21D1EB041DB00EFF276 /* Environment.swift in Sources */,
 				F33E92121EB9BEED003CF6DC /* BindingExtensions.swift in Sources */,
 				F3F492351E49A6440022232C /* Request.swift in Sources */,
 				F33D9CEC1EAF37C40049CA51 /* RegisterDefaultImplementation.swift in Sources */,
+				F342DB9C1F0C865C00843055 /* Validation.swift in Sources */,
 				F33D9CE31EAF1B650049CA51 /* RegisterViewController.swift in Sources */,
 				F3F4923D1E49A9050022232C /* Pagination.swift in Sources */,
 				F33D9CE81EAF31700049CA51 /* RegisterProtocols.swift in Sources */,

@@ -41,7 +41,7 @@ extension ImageOrientationCompatible {
             return ImageOrientation<Self>.self
         }
         set {
-            // this enables using Reactive to "mutate" base type
+            // this enables using ImageOrientation to "mutate" base type
         }
     }
     
