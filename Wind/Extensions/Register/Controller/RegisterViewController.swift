@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 import NSObject_Rx
-import RxMediaPicker
 import DeviceGuru
 
 fileprivate extension DeviceGuru {
@@ -43,7 +42,6 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var signingUpOulet: UIActivityIndicatorView!
     
-    fileprivate var mediaPicker: RxMediaPicker!
     fileprivate let imageSubject = Variable(Data())
     fileprivate let agreementSubject = Variable(true)
 
@@ -51,7 +49,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mediaPicker = RxMediaPicker(delegate: self)
         // Do any additional setup after loading the view.
 
         let viewModel = SignupViewModel(
@@ -168,24 +165,18 @@ class RegisterViewController: UIViewController {
         if title == "取消" || (DeviceGuru.isSimulator && title == "拍照") {
             return Observable.empty()
         }
-        else if title == "拍照" {
-            return self.mediaPicker.takePhoto()
+        
+        var sourceType: UIImagePickerControllerSourceType  = .photoLibrary
+        if title == "拍照" {
+            sourceType = .camera
         }
-        return self.mediaPicker.selectImage()
+        return UIImagePickerController.rx.createWithParent(self, animated: true, configureImagePicker: { picker in
+                picker.sourceType = sourceType
+                picker.allowsEditing = false
+            })
+            .flatMap({ (picker) -> Observable<(UIImage, UIImage?)> in
+                return picker.rx.takePhoto()
+            })
     }
-    
-
 }
 
-
-extension RegisterViewController: RxMediaPickerDelegate  {
-
-    func present(picker: UIImagePickerController) {
-        present(picker, animated: true, completion: nil)
-    }
-
-    func dismiss(picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-}

@@ -35,6 +35,9 @@
 		F342DB991F0C85D500843055 /* String+Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342DB981F0C85D500843055 /* String+Length.swift */; };
 		F342DB9B1F0C861A00843055 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342DB9A1F0C861A00843055 /* ValidationManager.swift */; };
 		F342DB9C1F0C865C00843055 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37798301F0BD00F0010BB66 /* Validation.swift */; };
+		F35AB66E1F25EA390067E1C3 /* UIImagePickerController+RxCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AB66D1F25E9C90067E1C3 /* UIImagePickerController+RxCreate.swift */; };
+		F35AB66F1F25EA3B0067E1C3 /* RxImagePickerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AB66C1F25E8B00067E1C3 /* RxImagePickerDelegateProxy.swift */; };
+		F35AB6701F25EA3E0067E1C3 /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35AB66B1F25E8B00067E1C3 /* UIImagePickerController+Rx.swift */; };
 		F38132A31E49B2820043B0D5 /* Reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38132A21E49B2820043B0D5 /* Reload.swift */; };
 		F392F5831EB1BD6800C3DC2C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F392F5821EB1BD6800C3DC2C /* R.generated.swift */; };
 		F3A139301EC19F2100B2ED5A /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A1392F1EC19F2100B2ED5A /* ResetPasswordViewController.swift */; };
@@ -117,6 +120,9 @@
 		F33EF21C1EB041DB00EFF276 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		F342DB981F0C85D500843055 /* String+Length.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Length.swift"; sourceTree = "<group>"; };
 		F342DB9A1F0C861A00843055 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
+		F35AB66B1F25E8B00067E1C3 /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
+		F35AB66C1F25E8B00067E1C3 /* RxImagePickerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxImagePickerDelegateProxy.swift; sourceTree = "<group>"; };
+		F35AB66D1F25E9C90067E1C3 /* UIImagePickerController+RxCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+RxCreate.swift"; sourceTree = "<group>"; };
 		F37798301F0BD00F0010BB66 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		F38132A21E49B2820043B0D5 /* Reload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reload.swift; sourceTree = "<group>"; };
 		F392F5821EB1BD6800C3DC2C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -284,11 +290,23 @@
 		F33EF2251EB093BC00EFF276 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F35AB6691F25E8800067E1C3 /* ImagePicker */,
 				F33E920C1EB97919003CF6DC /* WriteSequenceToConsole.swift */,
 				F33E92111EB9BEED003CF6DC /* BindingExtensions.swift */,
 				F342DB981F0C85D500843055 /* String+Length.swift */,
+				F3CAA1EC1EAEE8FB00C6F4AF /* Register */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F35AB6691F25E8800067E1C3 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				F35AB66D1F25E9C90067E1C3 /* UIImagePickerController+RxCreate.swift */,
+				F35AB66C1F25E8B00067E1C3 /* RxImagePickerDelegateProxy.swift */,
+				F35AB66B1F25E8B00067E1C3 /* UIImagePickerController+Rx.swift */,
+			);
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 		F362BF861E2F4C3E00C3C6D7 /* Request */ = {
@@ -336,7 +354,6 @@
 				F32385AA1EC0036600C65708 /* Convenient */,
 				F33606381EBC4C07007A5DC8 /* LaunchScreen */,
 				F33EF2251EB093BC00EFF276 /* Extensions */,
-				F3CAA1EC1EAEE8FB00C6F4AF /* Register */,
 				F3CAA1EB1EAEE7DE00C6F4AF /* Login */,
 				F3BF35031E288198000FB56B /* AppDelegate.swift */,
 				F392F5821EB1BD6800C3DC2C /* R.generated.swift */,
@@ -715,12 +732,14 @@
 				F3A139341EC1A70100B2ED5A /* ResetPasswordProtocols.swift in Sources */,
 				F38132A31E49B2820043B0D5 /* Reload.swift in Sources */,
 				F32387151EC0463000C65708 /* LoginProtocols.swift in Sources */,
+				F35AB6701F25EA3E0067E1C3 /* UIImagePickerController+Rx.swift in Sources */,
 				F31C01FC1E519A19004B25AA /* MP3Recoder.swift in Sources */,
 				F3A139321EC1A2B100B2ED5A /* ResetPasswordViewModel.swift in Sources */,
 				F392F5831EB1BD6800C3DC2C /* R.generated.swift in Sources */,
 				F32387171EC054D100C65708 /* LoginDefaultImplementation.swift in Sources */,
 				F32385AE1EC0036600C65708 /* UIImage+Orientation.swift in Sources */,
 				F32387111EC0441000C65708 /* SigninViewModel.swift in Sources */,
+				F35AB66F1F25EA3B0067E1C3 /* RxImagePickerDelegateProxy.swift in Sources */,
 				F32387131EC045A800C65708 /* ValidationResult.swift in Sources */,
 				F342DB991F0C85D500843055 /* String+Length.swift in Sources */,
 				F33D9CE61EAF1E630049CA51 /* SignupViewModel.swift in Sources */,
@@ -736,6 +755,7 @@
 				F3F492391E49A6D90022232C /* URLSessionClient.swift in Sources */,
 				F3F4923B1E49A75F0022232C /* UserRequest.swift in Sources */,
 				F33B46741EBAFDE000B9BB40 /* User.swift in Sources */,
+				F35AB66E1F25EA390067E1C3 /* UIImagePickerController+RxCreate.swift in Sources */,
 				F3A139301EC19F2100B2ED5A /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
