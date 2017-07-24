@@ -134,7 +134,7 @@ class RegisterViewController: UIViewController {
                     .observeOn(ConcurrentDispatchQueueScheduler(qos: .userInteractive))
                     .map{ pair -> (UIImage, UIImage?) in
                         let (originImage, editImage) = pair
-                        return (originImage.io.compress(),editImage?.io.compress())
+                        return (originImage.io.compress(), editImage?.io.compress())
                     }
                     .asDriver(onErrorJustReturn: (UIImage(), nil))
             }
@@ -170,12 +170,14 @@ class RegisterViewController: UIViewController {
         if title == "拍照" {
             sourceType = .camera
         }
-        return UIImagePickerController.rx.createWithParent(self, animated: true, configureImagePicker: { picker in
+        return UIImagePickerController.rx.createWithParent(self, animated: true){ picker in
                 picker.sourceType = sourceType
                 picker.allowsEditing = false
-            })
-            .flatMap({ (picker) -> Observable<(UIImage, UIImage?)> in
-                return picker.rx.takePhoto()
+            }
+            .flatMap { $0.rx.didFinishPickingMediaWithInfo }
+            .take(1)
+            .map({ info  in
+                return (info[UIImagePickerControllerOriginalImage] as! UIImage, info[UIImagePickerControllerEditedImage] as? UIImage)
             })
     }
 }

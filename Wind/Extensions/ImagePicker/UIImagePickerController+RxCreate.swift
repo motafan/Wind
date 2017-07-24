@@ -60,13 +60,4 @@ extension Reactive where Base: UIImagePickerController {
     }
 }
 
-extension Reactive where Base: UIImagePickerController {
-    
-    func takePhoto() -> Observable<(UIImage, UIImage?)> {
-        return didFinishPickingMediaWithInfo
-            .take(1)
-            .map({ info in
-                return (info[UIImagePickerControllerOriginalImage] as! UIImage, info[UIImagePickerControllerEditedImage] as? UIImage)
-            })
-    }
-}
+
