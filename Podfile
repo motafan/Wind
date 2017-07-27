@@ -12,16 +12,13 @@ def pods
     pod 'RxDataSources',    '~> 1.0.4'
     pod 'RxSwiftUtilities', '~> 1.0.1'
     pod 'NSObject+Rx',      '~> 2.3.0'
-#    pod 'RxMediaPicker',    '~> 1.1.0'
     pod 'RxAlamofire',      '~> 3.0.3'
     pod 'Charts',           '~> 3.0.2'
-#    pod 'ReSwift',          '~> 4.0.0'
-#    pod 'ReSwiftRouter',    '~> 0.5.1'
-#    pod 'ReSwiftRecorder',  '~> 0.4.0'
+    pod 'ReSwift',          '~> 4.0.0'
     pod 'RxOptional',       '~> 3.1.3'
     pod 'SwiftTheme',       '~> 0.3.3'
     pod 'SwifterSwift',     '~> 1.6.4'
-    pod 'Kingfisher',       '~> 3.10.3'
+    pod 'Kingfisher',       '~> 3.10.4'
     pod 'SwiftyJSON',       '~> 3.1.4'
     pod 'HandyJSON',        '~> 1.7.2'
     pod 'Alamofire',        '~> 4.5.0'
@@ -39,9 +36,10 @@ def pods
     pod 'mp3lame-for-ios',  '~> 0.1.1'
     pod 'GPUImage',         '~> 0.1.7'
     pod 'MWPhotoBrowser',   '~> 2.1.2'
-    pod 'TZImagePickerController', '~> 1.8.4'
-    #MBSmartVideo
-    #ACMediaFrame
+    pod 'TZImagePickerController', '~> 1.8.5'
+    pod 'LFMediaEditingController', '~> 1.0.7'
+    pod 'LFCameraPickerController', '~> 1.0.2'
+    pod 'ImagePickerSheetViewController', '~> 1.0.8'
 end
 
 target 'Wind' do
