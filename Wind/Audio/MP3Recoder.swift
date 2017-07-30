@@ -26,18 +26,31 @@ final public class MP3Bot: NSObject {
     fileprivate var audioBuffer: [AudioQueueBufferRef?] = []
     fileprivate var recordFormat: AudioStreamBasicDescription!
     public private(set) var isRecording: Bool = false
-    var url: URL?
-    
-    public func startRecord() throws {
+    private(set) var fileUrl: URL!
+    private(set) var fileHandle: FileHandle!
+    let lame = LameGetConfigContext()
+    public func startRecord(fileUrl: URL) throws {
+        
+        if self.isRecording {
+            return
+        }
+        
+        self.fileUrl = fileUrl
         do {
+            if FileManager.default.fileExists(atPath: fileUrl.absoluteString) {
+               try FileManager.default.removeItem(at: fileUrl)
+            }
+            
             let session = AVAudioSession.sharedInstance()
             try session.setCategory(AVAudioSessionCategoryPlayAndRecord,
                                     with: .defaultToSpeaker)
             try session.setActive(true)
+            
+            try fileHandle = FileHandle(forUpdating: fileUrl)
         } catch let error {
             throw error
         }
-        setAudioFormat(sampleRate: Constant.sampleRate)
+        setAudioFormat()
         let userData = unsafeBitCast(self, to: UnsafeMutableRawPointer.self)
         var recordFormat = self.recordFormat!
         
@@ -68,10 +81,11 @@ final public class MP3Bot: NSObject {
             isRecording = false
             AudioQueueStop(self.audioQueue!, true)
             AudioQueueDispose(self.audioQueue!, true)
+            fileHandle.closeFile()
         }
     }
     
-    private func setAudioFormat(sampleRate: Float64) {
+    private func setAudioFormat() {
         
         recordFormat = AudioStreamBasicDescription()
         recordFormat.mSampleRate = Constant.sampleRate
@@ -106,16 +120,14 @@ func AudioQueueInputCallback(inUserData: UnsafeMutableRawPointer?,
     if inNumPackets > 0  && recoder.isRecording {
         let buffer = inBuffer.pointee
         let nsamples = buffer.mAudioDataByteSize
-        let lame = LameGetConfigContext()
+        let lame = recoder.lame
         let pcm = buffer.mAudioData.assumingMemoryBound(to: Int16.self)
         let size = lame_encode_buffer(lame, pcm, pcm, Int32(nsamples), &recoder.mp3Buffer, Int32(nsamples * 4))
         let data =  Data(bytes: &recoder.mp3Buffer, count: Int(size))
-        let url = recoder.url ?? FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent("Wind.mp3")
-        try! data.write(to: url)
+        recoder.fileHandle.write(data)
         AudioQueueEnqueueBuffer(inAQ, inBuffer, 0, nil)
     }
 }
-
 
 public func synchronized(_ lock: Any, handler: () ->()) {
     objc_sync_enter(lock);  defer { objc_sync_exit(lock) }
@@ -127,9 +139,9 @@ private func LameGetConfigContext() -> lame_t! {
     //通道
     lame_set_num_channels(lame, 1)
     //采样率
-    lame_set_in_samplerate(lame, 16000);
+    lame_set_in_samplerate(lame, Int32(MP3Bot.Constant.sampleRate));
     //位速率
-    lame_set_brate(lame, 16)
+    lame_set_brate(lame, Int32(MP3Bot.Constant.bitsPerChannel))
     lame_set_mode(lame, MPEG_mode(rawValue: 1))
     //音频质量
     lame_set_quality(lame, 2)

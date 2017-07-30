@@ -13,11 +13,11 @@ PODS:
   - ImagePickerSheetViewController (1.0.8):
     - LFImagePickerController
   - Kingfisher (3.10.4)
-  - LFCameraPickerController (1.0.2):
-    - LFCameraPickerController/LFRecordButton (= 1.0.2)
+  - LFCameraPickerController (1.0.3):
+    - LFCameraPickerController/LFRecordButton (= 1.0.3)
     - LFMediaEditingController
     - SCRecorder
-  - LFCameraPickerController/LFRecordButton (1.0.2):
+  - LFCameraPickerController/LFRecordButton (1.0.3):
     - LFMediaEditingController
     - SCRecorder
   - LFImagePickerController (1.2.6.1):
@@ -28,11 +28,14 @@ PODS:
     - LFMediaEditingController
   - LFImagePickerController/LFToGIF (1.2.6.1):
     - LFMediaEditingController
-  - LFMediaEditingController (1.0.7):
-    - LFMediaEditingController/JRPickColorView (= 1.0.7)
-    - LFMediaEditingController/LFPhotoEditingController (= 1.0.7)
-  - LFMediaEditingController/JRPickColorView (1.0.7)
-  - LFMediaEditingController/LFPhotoEditingController (1.0.7):
+  - LFMediaEditingController (1.0.8.1):
+    - LFMediaEditingController/JRPickColorView (= 1.0.8.1)
+    - LFMediaEditingController/LFPhotoEditingController (= 1.0.8.1)
+    - LFMediaEditingController/LFVideoEditingController (= 1.0.8.1)
+  - LFMediaEditingController/JRPickColorView (1.0.8.1)
+  - LFMediaEditingController/LFPhotoEditingController (1.0.8.1):
+    - LFMediaEditingController/JRPickColorView
+  - LFMediaEditingController/LFVideoEditingController (1.0.8.1):
     - LFMediaEditingController/JRPickColorView
   - MBProgressHUD (0.9.2)
   - Moya/Core (8.0.5):
@@ -88,7 +91,7 @@ PODS:
   - SwifterSwift (1.6.4)
   - SwiftTheme (0.3.3)
   - SwiftyJSON (3.1.4)
-  - TZImagePickerController (1.8.5)
+  - TZImagePickerController (1.8.7)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5.0)
@@ -148,9 +151,9 @@ SPEC CHECKSUMS:
   IBAnimatable: 0fd2c9fd38c4798d71bcc18dbd87d473a7df2577
   ImagePickerSheetViewController: d70ba4d894a1aa5d331495f064dc774ccc642cd5
   Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
-  LFCameraPickerController: 626bdae55e17d83c4de54db04d9855f095f209cf
+  LFCameraPickerController: 3ade59c79f05e48a737e126da468a5197ff2bacd
   LFImagePickerController: 06524828cf8cdae7887cb1ae2dba936f7f971d40
-  LFMediaEditingController: 9425ae85119ff2c67b480969d92448cb9a2cba46
+  LFMediaEditingController: c53a9538c3b28ac61661a75a77ef74f667a83133
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   mp3lame-for-ios: 4daeb5686885be66438154050e3fe975d4ee1f07
@@ -178,7 +181,7 @@ SPEC CHECKSUMS:
   SwifterSwift: 92c73c47c3cbf7d5f788adf6459bf07b5d23d3fb
   SwiftTheme: 85f84747a48749b5b3df7c3e96fc0b1d45677d30
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  TZImagePickerController: ca4110384c10e25925b9197db8b755da14ebf3db
+  TZImagePickerController: 79fa5712237cf6bdc63311cf65d7e0aa369b2b0a
 
 PODFILE CHECKSUM: 58993e68329605a4d3268cdfaa1ec05c508b95f5
 
