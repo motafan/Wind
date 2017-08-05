@@ -36,9 +36,9 @@ def pods
     pod 'mp3lame-for-ios',  '~> 0.1.1'
     pod 'GPUImage',         '~> 0.1.7'
     pod 'MWPhotoBrowser',   '~> 2.1.2'
-    pod 'TZImagePickerController', '~> 1.8.5'
-    pod 'LFMediaEditingController', '~> 1.0.7'
-    pod 'LFCameraPickerController', '~> 1.0.2'
+    pod 'TZImagePickerController', '~> 1.8.7'
+    pod 'LFMediaEditingController', '~> 1.0.9'
+    pod 'LFCameraPickerController', '~> 1.0.3'
     pod 'ImagePickerSheetViewController', '~> 1.0.8'
 end
 

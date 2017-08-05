@@ -163,7 +163,7 @@ class RegisterViewController: UIViewController {
     
     private func selectImageForTitle(_ title: String) -> Observable<(UIImage, UIImage?)> {
         if title == "取消" || (DeviceGuru.isSimulator && title == "拍照") {
-            return Observable.empty()
+            return Observable.error(CameraError.simulator)
         }
         
         var sourceType: UIImagePickerControllerSourceType  = .photoLibrary
@@ -180,5 +180,10 @@ class RegisterViewController: UIViewController {
                 return (info[UIImagePickerControllerOriginalImage] as! UIImage, info[UIImagePickerControllerEditedImage] as? UIImage)
             })
     }
+}
+
+
+enum CameraError: String, Swift.Error {
+    case simulator = "The simulator does not support collection!"
 }
 
