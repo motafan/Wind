@@ -51,50 +51,50 @@ class ResetPasswordViewController: UIViewController {
         
         viewModel.validatedPhone
             .drive(phoneOutlet.rx.validationResult)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.validatedCode
             .drive(codeOutlet.rx.validationResult)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.validatedPassword
             .drive(passwordOutlet.rx.validationResult)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.validatedPasswordRepeated
             .drive(repeatedPasswordOutlet.rx.validationResult)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.resetingIn
             .drive(resetingInOulet.rx.isAnimating)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.resetingIn
             .drive(UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.sendingIn
             .drive()
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.resetIn
             .drive()
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.sendCodeEnabled
             .drive(sendCodeOutlet.rx.isEnabled)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.resetPasswowrdEnabled
             .drive(resetOutlet.rx.isEnabled)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         let tapBackground = UITapGestureRecognizer()
         tapBackground.rx.event
             .subscribe(onNext: { [weak self] _ in
                 self?.view.endEditing(true)
             })
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         view.addGestureRecognizer(tapBackground)
     }
     

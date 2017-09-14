@@ -46,11 +46,11 @@ class LoginViewController: UIViewController {
         
         viewModel.validatedPhone
             .drive()
-            .disposed(by: rx_disposeBag)
+            .disposed(by: disposeBag)
         
         viewModel.validatedPassword
             .drive()
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         automaticLoginOutlet.rx.tap
             .subscribe(onNext: { [unowned self] _ in
@@ -58,30 +58,30 @@ class LoginViewController: UIViewController {
                 self.automaticLoginOutlet.isSelected = selected
                 self.automaticLoginSubject.value = selected
             })
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.signingIn
             .drive(signingInOulet.rx.isAnimating)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.signingIn
             .drive(UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.signedIn
             .drive()
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.signinEnabled
             .drive(signinOutlet.rx.isEnabled)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         let tapBackground = UITapGestureRecognizer()
         tapBackground.rx.event
             .subscribe(onNext: { [weak self] _ in
                 self?.view.endEditing(true)
             })
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         view.addGestureRecognizer(tapBackground)
         
     }

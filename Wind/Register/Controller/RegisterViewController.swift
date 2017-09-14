@@ -71,46 +71,46 @@ class RegisterViewController: UIViewController {
         
         viewModel.validatedPhone
             .drive(phoneOutlet.rx.validationResult)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.validatedUsername
             .drive(usernameOutlet.rx.validationResult)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.validatedPassword
             .drive(passwordOutlet.rx.validationResult)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.validatedPasswordRepeated
             .drive(repeatedPasswordOutlet.rx.validationResult)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.validatedCard
             .drive()
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.validatedAgreement
             .drive()
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.signingIn
             .drive(signingUpOulet.rx.isAnimating)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.signingIn
             .drive(UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.signedIn
             .drive(onNext: { signedIn in
                 print("User signed in \(signedIn)")
             })
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         
         viewModel.signupEnabled
             .drive(signupOutlet.rx.isEnabled)
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         agreementOutlet.rx.tap
             .subscribe(onNext: { [unowned self] _ in
@@ -118,7 +118,7 @@ class RegisterViewController: UIViewController {
                 self.agreementOutlet.isSelected = selected
                 self.agreementSubject.value = selected
             })
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         let tapImage = UITapGestureRecognizer()
         tapImage.rx.event
@@ -149,7 +149,7 @@ class RegisterViewController: UIViewController {
                 self.cardOutlet.image = image
                 self.imageSubject.value = data
             })
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         addImageOutlet.addGestureRecognizer(tapImage)
         
         let tapBackground = UITapGestureRecognizer()
@@ -157,7 +157,7 @@ class RegisterViewController: UIViewController {
             .subscribe(onNext: { [weak self] _ in
                 self?.view.endEditing(true)
             })
-            .disposed(by: rx_disposeBag)
+            .disposed(by: self.rx.disposeBag)
         view.addGestureRecognizer(tapBackground)
     }
     
