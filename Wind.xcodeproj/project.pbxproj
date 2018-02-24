@@ -19,6 +19,7 @@
 		F32387131EC045A800C65708 /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32387121EC045A800C65708 /* ValidationResult.swift */; };
 		F32387151EC0463000C65708 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32387141EC0463000C65708 /* LoginProtocols.swift */; };
 		F32387171EC054D100C65708 /* LoginDefaultImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32387161EC054D100C65708 /* LoginDefaultImplementation.swift */; };
+		F329DE05204103390070490E /* UIImage+LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F329DE04204103390070490E /* UIImage+LaunchScreen.swift */; };
 		F336063C1EBC4C54007A5DC8 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F336063B1EBC4C54007A5DC8 /* LaunchScreenViewController.swift */; };
 		F33606461EBC5081007A5DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F33606451EBC5081007A5DC8 /* LaunchScreen.storyboard */; };
 		F33B465D1EBACFA100B9BB40 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F33B465C1EBACFA100B9BB40 /* Login.storyboard */; };
@@ -51,6 +52,7 @@
 		F3BF35261E288199000FB56B /* WindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BF35251E288199000FB56B /* WindUITests.swift */; };
 		F3CAA1EE1EAEE91B00C6F4AF /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3CAA1ED1EAEE91B00C6F4AF /* Register.storyboard */; };
 		F3CAA1F01EAEEC4A00C6F4AF /* Register.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3CAA1EF1EAEEC4A00C6F4AF /* Register.xcassets */; };
+		F3D5E36A20401DDD0094E452 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D5E36920401DDD0094E452 /* ActivityIndicator.swift */; };
 		F3F492351E49A6440022232C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F492341E49A6440022232C /* Request.swift */; };
 		F3F492391E49A6D90022232C /* URLSessionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F492381E49A6D90022232C /* URLSessionClient.swift */; };
 		F3F4923B1E49A75F0022232C /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4923A1E49A75F0022232C /* UserRequest.swift */; };
@@ -105,6 +107,7 @@
 		F32387121EC045A800C65708 /* ValidationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
 		F32387141EC0463000C65708 /* LoginProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		F32387161EC054D100C65708 /* LoginDefaultImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDefaultImplementation.swift; sourceTree = "<group>"; };
+		F329DE04204103390070490E /* UIImage+LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+LaunchScreen.swift"; sourceTree = "<group>"; };
 		F336063B1EBC4C54007A5DC8 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		F33606451EBC5081007A5DC8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F33B465C1EBACFA100B9BB40 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -153,6 +156,7 @@
 		F3BF353C1E289653000FB56B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/Wind-fybyxhsunlsrzeawvxgqaspkqewe/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		F3CAA1ED1EAEE91B00C6F4AF /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		F3CAA1EF1EAEEC4A00C6F4AF /* Register.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Register.xcassets; sourceTree = "<group>"; };
+		F3D5E36920401DDD0094E452 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		F3E63AAB1E4C744400B2AB1F /* Wind-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wind-Bridging-Header.h"; sourceTree = "<group>"; };
 		F3F492341E49A6440022232C /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		F3F492381E49A6D90022232C /* URLSessionClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionClient.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				F32385AB1EC0036600C65708 /* UIImage+Orientation.swift */,
+				F329DE04204103390070490E /* UIImage+LaunchScreen.swift */,
 				F32385AC1EC0036600C65708 /* UIStoryboard+Convenient.swift */,
 				F32385AD1EC0036600C65708 /* UIView+Convenient.swift */,
 			);
@@ -283,6 +288,7 @@
 				F32387121EC045A800C65708 /* ValidationResult.swift */,
 				F342DB9A1F0C861A00843055 /* ValidationManager.swift */,
 				F37798301F0BD00F0010BB66 /* Validation.swift */,
+				F3D5E36920401DDD0094E452 /* ActivityIndicator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -678,11 +684,8 @@
 				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
-				"${BUILT_PRODUCTS_DIR}/ImagePickerSheetViewController/ImagePickerSheetViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LFCameraPickerController/LFCameraPickerController.framework",
-				"${BUILT_PRODUCTS_DIR}/LFImagePickerController/LFImagePickerController.framework",
-				"${BUILT_PRODUCTS_DIR}/LFMediaEditingController/LFMediaEditingController.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MWPhotoBrowser/MWPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
@@ -700,7 +703,6 @@
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwiftUtilities/RxSwiftUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SCRecorder/SCRecorder.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -722,11 +724,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePickerSheetViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFCameraPickerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFImagePickerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFMediaEditingController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MWPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -744,7 +743,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCRecorder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -814,6 +812,7 @@
 			files = (
 				F342DB9B1F0C861A00843055 /* ValidationManager.swift in Sources */,
 				F33EF2191EB039E500EFF276 /* Wireframe.swift in Sources */,
+				F3D5E36A20401DDD0094E452 /* ActivityIndicator.swift in Sources */,
 				F32385AF1EC0036600C65708 /* UIStoryboard+Convenient.swift in Sources */,
 				F32385B01EC0036600C65708 /* UIView+Convenient.swift in Sources */,
 				F323870F1EC0419800C65708 /* LoginViewController.swift in Sources */,
@@ -847,6 +846,7 @@
 				F3F492391E49A6D90022232C /* URLSessionClient.swift in Sources */,
 				F3F4923B1E49A75F0022232C /* UserRequest.swift in Sources */,
 				F33B46741EBAFDE000B9BB40 /* User.swift in Sources */,
+				F329DE05204103390070490E /* UIImage+LaunchScreen.swift in Sources */,
 				F35AB66E1F25EA390067E1C3 /* UIImagePickerController+RxCreate.swift in Sources */,
 				F3A139301EC19F2100B2ED5A /* ResetPasswordViewController.swift in Sources */,
 			);

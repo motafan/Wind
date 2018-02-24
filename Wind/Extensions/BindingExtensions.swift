@@ -46,9 +46,10 @@ extension ValidationResult {
 }
 
 extension Reactive where Base: UITextField {
-    var validationResult: UIBindingObserver<Base, ValidationResult> {
-        return UIBindingObserver(UIElement: base) { label, result in
-            label.textColor = result.textColor
+    var validationResult: Binder<ValidationResult> {
+        return Binder(base) { textField, result in
+            textField.textColor = result.textColor
         }
     }
 }
+

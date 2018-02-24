@@ -8,78 +8,13 @@
 
 import UIKit
 
-extension UIDeviceOrientation {
-    
-    var launchImageDescription: String {
-        switch self {
-        case .landscapeLeft,.landscapeRight:
-            return "Landscape"
-        case .portrait,.portraitUpsideDown:
-           fallthrough
-        default:
-            return "Portrait"
-        }
-    }
-}
-
-
-extension UIScreen {
-    
-    var size: CGSize {
-        return self.bounds.size
-    }
-}
-
-extension UIImage {
-    
-   private struct UILaunchImageAssociatedKeys {
-        static let images = "UILaunchImages"
-        static let minimumOSVersion = "UILaunchImageMinimumOSVersion"
-        static let imageName = "UILaunchImageName"
-        static let orientation = "UILaunchImageOrientation"
-        static let imageSize = "UILaunchImageSize"
-    }
-    
-    static func launchImage() -> UIImage? {
-        
-        let UILaunchImageSize = UIScreen.main.size
-        let UILaunchImageOrientation = UIDevice.current.orientation.launchImageDescription
-        
-        guard let UILaunchImages = Bundle.main.infoDictionary?[UILaunchImageAssociatedKeys.images]
-            as? Array<Dictionary<String, String>>  else {
-            return nil
-        }
-        
-        let launchImageName = UILaunchImages
-            .filter { launchImage -> Bool in
-                guard let launchImageSize = launchImage[UILaunchImageAssociatedKeys.imageSize],
-                    let launchImageOrientation = launchImage[UILaunchImageAssociatedKeys.orientation] else {
-                    return false
-                }
-                
-                return UILaunchImageOrientation == launchImageOrientation &&
-                    UILaunchImageSize == CGSizeFromString(launchImageSize)
-            }
-            .first?[UILaunchImageAssociatedKeys.imageName]
-        
-        guard let _ = launchImageName else {
-            return nil
-        }
-        
-        return UIImage(named: launchImageName!)
-
-    }
-}
-
-
 class LaunchScreenViewController: UIViewController {
-    
     
     fileprivate static var window: UIWindow?
     
     private static let lock = 0
     
-    class func showForRemainDuration(_ duration: TimeInterval) {
+    class func show(for remainDuration: TimeInterval) {
         doLocked {
             if case .none = window {
                 window = UIWindow(frame: UIScreen.main.bounds)
@@ -88,7 +23,7 @@ class LaunchScreenViewController: UIViewController {
                 let launchScreen: LaunchScreenViewController = stroyboard.instantiateViewController()
                 window!.rootViewController = launchScreen
                 window!.isHidden = false
-                dismiss(duration)
+                dismiss(remainDuration)
             }
         }
     }
@@ -129,6 +64,5 @@ class LaunchScreenViewController: UIViewController {
         // Do any additional setup after loading the view.
 
     }
-
 
 }

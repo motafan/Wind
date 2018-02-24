@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
         
         viewModel.validatedPhone
             .drive()
-            .disposed(by: disposeBag)
+            .disposed(by: self.rx.disposeBag)
         
         viewModel.validatedPassword
             .drive()

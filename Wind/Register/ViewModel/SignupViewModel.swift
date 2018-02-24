@@ -8,7 +8,7 @@
 
 import RxSwift
 import RxCocoa
-import RxSwiftUtilities
+//import RxSwiftUtilities
 
 class SignupViewModel {
     
@@ -80,7 +80,8 @@ class SignupViewModel {
             .flatMapLatest({ (arg) -> SharedSequence<DriverSharingStrategy, ValidationResult> in
                 let (phone, username, password, card) = arg
                 return API.signup(phone, username: username, password: password, card: card)
-                    .trackActivity(signingIn).asDriver(onErrorJustReturn: .failed(message: registerErrorMessage))
+                    .trackActivity(signingIn)
+                    .asDriver(onErrorJustReturn: .failed(message: registerErrorMessage))
             })
             .flatMapLatest { signingIn -> Driver<Bool> in
                 let message = signingIn.description

@@ -26,11 +26,13 @@ extension TableViewController: NextPageLoadable {
     func performLoad(
         successHandler: @escaping ([User], Bool, Int?) -> (),
         failHandler: @escaping () -> ()) {
-        client.send(UserResquest()) { (result) in
+        client.send(UserResquest()) { result in
             if let result = result {
-                successHandler(result.items,
-                               result.hasNext,
-                               result.items.last?.id)
+                successHandler(
+                    result.items,
+                    result.hasNext,
+                    result.items.last?.id
+                )
             }
             else {
                 failHandler()
@@ -43,9 +45,7 @@ extension TableViewController: NextPageLoadable {
 
 extension TableViewController {
     
-    func tableView(tableView: UITableView,
-                   willDisplayCell cell: UITableViewCell,
-                   forRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
     {
         if indexPath.row == data.count - 1 {
             loadNext()

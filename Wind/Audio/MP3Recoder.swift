@@ -62,7 +62,8 @@ final public class MP3Bot: NSObject {
             CFRunLoopGetCurrent(),
             nil,
             0,
-            &audioQueue)
+            &audioQueue
+        )
         // 创建缓冲器
         for _ in 0..<Constant.bufferNum {
             var buffer: AudioQueueBufferRef? = nil

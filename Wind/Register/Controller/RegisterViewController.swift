@@ -16,7 +16,7 @@ import DeviceGuru
 fileprivate extension DeviceGuru {
     
     static var isSimulator: Bool {
-        return self.hardware() == .simulator
+        return DeviceGuru().hardware() == .simulator
     }
     
 }

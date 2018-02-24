@@ -60,22 +60,28 @@ extension NextPageLoadable {
         nextPageState.isLoading = true
         performLoad(successHandler: { (rows, hasNext, lastId) in
             self.data += rows
-            self.nextPageState.update(hasNext: hasNext,
-                                      isLoading: false,
-                                      lastId: lastId)
+            self.nextPageState.update(
+                hasNext: hasNext,
+                isLoading: false,
+                lastId: lastId
+            )
             
             let object = self
             let userInfo = [NextPageLoadableReloadViewUserInfoKey : object]
             let notificationCenter: NotificationCenter = .default
             //reload view will reload data
-            notificationCenter.post(name: .NextPageLoadableWillReloadData,
-                                    object: object,
-                                    userInfo: userInfo)
+            notificationCenter.post(
+                name: .NextPageLoadableWillReloadData,
+                object: object,
+                userInfo: userInfo
+            )
             reloadView.reloadData()
             //reload view did reload data
-            notificationCenter.post(name: .NextPageLoadableDidReloadData,
-                                    object: object,
-                                    userInfo: userInfo)
+            notificationCenter.post(
+                name: .NextPageLoadableDidReloadData,
+                object: object,
+                userInfo: userInfo
+            )
         }, failHandler: {
             // Failed when first loading
             if self.nextPageState.lastId == nil {

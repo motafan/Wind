@@ -11,9 +11,9 @@ import UIKit
 public protocol ReloadableType {
     func reloadData()
 }
-extension UITableView: ReloadableType {}
+extension UITableView: ReloadableType { }
 
-extension UICollectionView: ReloadableType {}
+extension UICollectionView: ReloadableType { }
 
 public extension NextPageLoadable where Self: UITableViewController {
     func loadNext() {

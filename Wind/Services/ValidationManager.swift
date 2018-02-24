@@ -27,7 +27,7 @@ class ValidationManager {
     }
     
     class func validatePassword(_ password: String) -> ValidationResult {
-        let numberOfCharacters = password.characters.count
+        let numberOfCharacters =  password.length
         if numberOfCharacters == 0 {
             return .empty
         }
