@@ -29,8 +29,12 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>需要您的同意,才能访问相机</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>需要您的同意,才能访问相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>需要您的同意,才能访问相册</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>UIMainStoryboardFile</key>
 	<string>Login</string>
 	<key>UIRequiredDeviceCapabilities</key>

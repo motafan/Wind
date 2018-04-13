@@ -1,17 +1,17 @@
 PODS:
-  - Alamofire (4.6.0)
+  - Alamofire (4.7.1)
   - AudioBot (1.1.1)
-  - AutoReview (1.0.0)
-  - Charts (3.0.5):
-    - Charts/Core (= 3.0.5)
-  - Charts/Core (3.0.5)
+  - AutoReview (1.2.0)
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
   - DACircularProgress (2.3.1)
-  - DeviceGuru (3.0.1)
+  - DeviceGuru (4.0.0)
   - Differentiator (3.0.2)
   - GPUImage (0.1.7)
-  - HandyJSON (4.0.0-beta.1)
+  - HandyJSON (4.1.1)
   - IBAnimatable (5.0.0)
-  - Kingfisher (4.6.2)
+  - Kingfisher (4.7.0)
   - LFCameraPickerController (1.0.7):
     - LFCameraPickerController/Core (= 1.0.7)
     - SCRecorder
@@ -21,36 +21,36 @@ PODS:
   - LFCameraPickerController/LFRecordButton (1.0.7):
     - SCRecorder
   - MBProgressHUD (0.9.2)
-  - Moya/Core (11.0.0):
+  - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - Moya/RxSwift (11.0.0):
+  - Moya/RxSwift (11.0.2):
     - Moya/Core
     - RxSwift (~> 4.0)
   - mp3lame-for-ios (0.1.1)
   - MWPhotoBrowser (2.1.2):
     - DACircularProgress (~> 2.3)
     - MBProgressHUD (~> 0.9)
-    - SDWebImage (!= 3.7.2, ~> 3.7)
-  - NSObject+Rx (4.2.0):
+    - "SDWebImage (!= 3.7.2, ~> 3.7)"
+  - "NSObject+Rx (4.3.0)":
     - RxSwift (~> 4.0)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
-  - Realm (3.1.1):
-    - Realm/Headers (= 3.1.1)
-  - Realm/Headers (3.1.1)
-  - RealmSwift (3.1.1):
-    - Realm (= 3.1.1)
+  - Realm (3.3.2):
+    - Realm/Headers (= 3.3.2)
+  - Realm/Headers (3.3.2)
+  - RealmSwift (3.3.2):
+    - Realm (= 3.3.2)
   - Result (3.2.4)
   - ReSwift (4.0.1)
   - Router (1.0.0)
-  - Ruler (2.1.0)
-  - RxAlamofire (4.0.0):
-    - RxAlamofire/Core (= 4.0.0)
-  - RxAlamofire/Core (4.0.0):
+  - Ruler (2.2.0)
+  - RxAlamofire (4.2.0):
+    - RxAlamofire/Core (= 4.2.0)
+  - RxAlamofire/Core (4.2.0):
     - Alamofire (~> 4.5)
-    - RxSwift (~> 4.0)
+    - RxSwift (~> 4)
   - RxBlocking (4.1.2):
     - RxSwift (~> 4.0)
   - RxCocoa (4.1.2):
@@ -59,7 +59,7 @@ PODS:
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxOptional (3.3.0):
+  - RxOptional (3.4.0):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
@@ -69,56 +69,99 @@ PODS:
   - SDWebImage/Core (3.8.2)
   - SnapKit (4.0.0)
   - SwiftDate (4.5.1)
-  - SwifterSwift (4.1.1):
-    - SwifterSwift/AppKit (= 4.1.1)
-    - SwifterSwift/CoreGraphics (= 4.1.1)
-    - SwifterSwift/CoreLocation (= 4.1.1)
-    - SwifterSwift/Foundation (= 4.1.1)
-    - SwifterSwift/SwiftStdlib (= 4.1.1)
-    - SwifterSwift/UIKit (= 4.1.1)
-  - SwifterSwift/AppKit (4.1.1)
-  - SwifterSwift/CoreGraphics (4.1.1)
-  - SwifterSwift/CoreLocation (4.1.1)
-  - SwifterSwift/Foundation (4.1.1)
-  - SwifterSwift/SwiftStdlib (4.1.1)
-  - SwifterSwift/UIKit (4.1.1)
+  - SwifterSwift (4.3.0):
+    - SwifterSwift/AppKit (= 4.3.0)
+    - SwifterSwift/CoreGraphics (= 4.3.0)
+    - SwifterSwift/CoreLocation (= 4.3.0)
+    - SwifterSwift/Foundation (= 4.3.0)
+    - SwifterSwift/MapKit (= 4.3.0)
+    - SwifterSwift/SwiftStdlib (= 4.3.0)
+    - SwifterSwift/UIKit (= 4.3.0)
+  - SwifterSwift/AppKit (4.3.0)
+  - SwifterSwift/CoreGraphics (4.3.0)
+  - SwifterSwift/CoreLocation (4.3.0)
+  - SwifterSwift/Foundation (4.3.0)
+  - SwifterSwift/MapKit (4.3.0)
+  - SwifterSwift/SwiftStdlib (4.3.0)
+  - SwifterSwift/UIKit (4.3.0)
   - SwiftTheme (0.4.1)
   - SwiftyJSON (4.0.0)
-  - TZImagePickerController (2.0.0.6)
+  - TZImagePickerController (2.0.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.6.0)
+  - Alamofire (~> 4.7.1)
   - AudioBot (~> 1.1.1)
-  - AutoReview (~> 1.0.0)
-  - Charts (~> 3.0.5)
-  - DeviceGuru (~> 3.0.1)
+  - AutoReview (~> 1.2.0)
+  - Charts (~> 3.1.1)
+  - DeviceGuru (~> 4.0.0)
   - GPUImage (~> 0.1.7)
-  - HandyJSON (~> 4.0.0-beta.1)
+  - HandyJSON (~> 4.1.1)
   - IBAnimatable (~> 5.0.0)
-  - Kingfisher (~> 4.6.2)
+  - Kingfisher (~> 4.7.0)
   - LFCameraPickerController (~> 1.0.7)
-  - Moya/Core (~> 11.0.0)
-  - Moya/RxSwift (~> 11.0.0)
+  - Moya/Core (~> 11.0.2)
+  - Moya/RxSwift (~> 11.0.2)
   - mp3lame-for-ios (~> 0.1.1)
   - MWPhotoBrowser (~> 2.1.2)
-  - NSObject+Rx (~> 4.2.0)
+  - "NSObject+Rx (~> 4.3.0)"
   - R.swift (~> 4.0.0)
-  - RealmSwift (~> 3.1.1)
+  - RealmSwift (~> 3.3.2)
   - ReSwift (~> 4.0.1)
   - Router (from `https://github.com/ilumanxi/Router.git`)
-  - Ruler (~> 2.1.0)
-  - RxAlamofire (~> 4.0.0)
+  - Ruler (~> 2.2.0)
+  - RxAlamofire (~> 4.2.0)
   - RxBlocking (~> 4.1.2)
   - RxCocoa (~> 4.1.2)
   - RxDataSources (~> 3.0.2)
-  - RxOptional (~> 3.3.0)
+  - RxOptional (~> 3.4.0)
   - RxSwift (~> 4.1.2)
   - SnapKit (~> 4.0.0)
   - SwiftDate (~> 4.5.1)
-  - SwifterSwift (~> 4.1.1)
+  - SwifterSwift (~> 4.3.0)
   - SwiftTheme (~> 0.4.1)
   - SwiftyJSON (~> 4.0.0)
-  - TZImagePickerController (~> 2.0.0.6)
+  - TZImagePickerController (~> 2.0.1)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AudioBot
+    - AutoReview
+    - Charts
+    - DACircularProgress
+    - DeviceGuru
+    - Differentiator
+    - GPUImage
+    - HandyJSON
+    - IBAnimatable
+    - Kingfisher
+    - LFCameraPickerController
+    - MBProgressHUD
+    - Moya
+    - mp3lame-for-ios
+    - MWPhotoBrowser
+    - "NSObject+Rx"
+    - R.swift
+    - R.swift.Library
+    - Realm
+    - RealmSwift
+    - Result
+    - ReSwift
+    - Ruler
+    - RxAlamofire
+    - RxBlocking
+    - RxCocoa
+    - RxDataSources
+    - RxOptional
+    - RxSwift
+    - SCRecorder
+    - SDWebImage
+    - SnapKit
+    - SwiftDate
+    - SwifterSwift
+    - SwiftTheme
+    - SwiftyJSON
+    - TZImagePickerController
 
 EXTERNAL SOURCES:
   Router:
@@ -130,46 +173,46 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ilumanxi/Router.git
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   AudioBot: b7bcf3b18dc2cdccba14d798400c708908ad203d
-  AutoReview: 6dd11897fe97eda0dca3a6aafc13eeeca453620a
-  Charts: 45cdc985b764c838b35ee47eb1365d15735f6d1a
+  AutoReview: 55e0ad72aab9679dbc53fc604a24964960878e6d
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
-  DeviceGuru: 648c34deb10c6ef59b013ea2922c04c18d8973f0
+  DeviceGuru: ad93600b4ce895a48ae2931e32513b5673f69707
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
-  HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
+  HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
   IBAnimatable: aa2286a9cf8fb4ae2e1be85c5287ae56143b024f
-  Kingfisher: 55b9c395bf8d3949676ad3861111923990ab68cf
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   LFCameraPickerController: 7af9051f3516a4bc8f758a56a94ecde3ef94f01a
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
-  Moya: be29766339783963a70d1279d69c891ab3a1393c
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
   mp3lame-for-ios: 4daeb5686885be66438154050e3fe975d4ee1f07
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
-  NSObject+Rx: cbbc05e3cb3ad446cdbced3e00e39c9efaf02925
+  "NSObject+Rx": 9a5eeff5e08156f849fa973514456f28eef08742
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
-  Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
-  RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
+  Realm: d927fbf66df5532cfafc08afb5f7e53ded37b894
+  RealmSwift: 4e903a494e05d866581d69ad6f7e7b879d446baf
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
   Router: 6088d6d321e097070d5ea4bd792cb015dfa0fbb4
-  Ruler: 831c4a405a9ae0e5f1d6b824a46b4a2ac66da09f
-  RxAlamofire: 6ea579ac53bf14cb4bc7049a3866e5a769989b1d
+  Ruler: 624e0f82bfdf24c15fb0da45fbcc170ec7a4dbff
+  RxAlamofire: 87a9c588541210cc3e4a1f843ccc3ecf3eb98b31
   RxBlocking: f6054985901412fc8c02daa84e92d4ba68c61389
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
-  RxOptional: e5448d3e21024489e07c31f6a262f2b50c975367
+  RxOptional: fabc37fc8e3cf4c336ebaeb5c92b576c64b2e6c5
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SCRecorder: bbb521dbc222908876ec9cd9156bbc8a893bed44
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
-  SwifterSwift: bfcae9d659dfd306d164f13f72cad09198f30723
+  SwifterSwift: f3fce2b9fc5b9d8fda6eec33825e5243c60aebba
   SwiftTheme: 36d71c4eed4b2c401c782cf036e4586c749a8173
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  TZImagePickerController: 028d1670cd46b2d35769503dd36a6b2d21eee563
+  TZImagePickerController: 34ecb53af8c349964394407e42b6e54e22589ebe
 
-PODFILE CHECKSUM: b84c92b49e49830c5791f986634dc183eeefaff5
+PODFILE CHECKSUM: b9b5b583fc5b7b57ae8102048e645ff902214dd5
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0
